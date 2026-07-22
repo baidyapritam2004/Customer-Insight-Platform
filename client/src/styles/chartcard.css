@@ -1,0 +1,49 @@
+.chart-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    padding:20px;
+    margin:10px;
+    transition:.3s;
+
+}
+
+.chart-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.chart-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.chart-header h3{
+
+    font-size:20px;
+
+    color:#1e293b;
+
+    font-weight:600;
+
+}
+
+.chart-body{
+
+    height:350px;
+
+}

@@ -1,0 +1,254 @@
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: #0f172a;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15);
+
+    transition: width 0.3s ease;
+
+    z-index: 1000;
+}
+
+/* =========================================
+   COLLAPSED SIDEBAR
+========================================= */
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.sidebar-header {
+
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    flex-shrink: 0;
+
+}
+
+.sidebar-header h2 {
+
+    font-size: 24px;
+
+    color: white;
+
+    font-weight: 700;
+
+    margin: 0;
+
+}
+
+.menu-btn {
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.menu-btn:hover {
+
+    color: #60a5fa;
+
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.sidebar nav {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 20px 0;
+
+    overflow-y: auto;
+
+}
+
+.menu-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 14px 22px;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    transition: all .25s ease;
+
+    border-left: 4px solid transparent;
+
+}
+
+.menu-item svg {
+
+    font-size: 20px;
+
+    min-width: 20px;
+
+}
+
+.menu-item:hover {
+
+    background: #1e293b;
+
+    color: white;
+
+    border-left: 4px solid #3b82f6;
+
+}
+
+.menu-item.active {
+
+    background: #2563eb;
+
+    color: white;
+
+    border-left: 4px solid white;
+
+}
+
+/* =========================================
+   LOGOUT SECTION
+========================================= */
+
+.logout {
+
+    margin-top: auto;
+
+    padding: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    background: #111827;
+
+    flex-shrink: 0;
+
+}
+
+.logout button {
+
+    width: 100%;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #ef4444;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: all .25s ease;
+
+}
+
+.logout button:hover {
+
+    background: #dc2626;
+
+    transform: translateY(-2px);
+
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.sidebar nav::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+.sidebar nav::-webkit-scrollbar-thumb {
+
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 10px;
+
+}
+
+.sidebar nav::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+
+        width: 220px;
+
+    }
+
+}

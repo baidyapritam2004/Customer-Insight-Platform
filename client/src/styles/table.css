@@ -1,0 +1,271 @@
+/* ==========================================
+   CUSTOMER TABLE
+========================================== */
+
+.table-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-top:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/* Header */
+
+.table-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.table-header h2{
+
+    color:#1e293b;
+
+    font-size:24px;
+
+}
+
+.record-count{
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* Wrapper */
+
+.table-wrapper{
+
+    overflow-x:auto;
+
+}
+
+/* Table */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:850px;
+
+}
+
+/* Header */
+
+thead{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+}
+
+th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:16px;
+
+    text-align:left;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:.25s;
+
+}
+
+th:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* Body */
+
+td{
+
+    padding:16px;
+
+    border-bottom:1px solid #e5e7eb;
+
+    color:#334155;
+
+}
+
+/* Zebra rows */
+
+tbody tr:nth-child(even){
+
+    background:#fafafa;
+
+}
+
+tbody tr:hover{
+
+    background:#eff6ff;
+
+}
+
+/* Category Chip */
+
+.category-chip{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* Price */
+
+.price{
+
+    color:#16a34a;
+
+    font-weight:700;
+
+}
+
+/* Stars */
+
+.stars{
+
+    display:flex;
+
+    gap:3px;
+
+    color:#f59e0b;
+
+}
+
+/* Pagination */
+
+.pagination{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.pagination button{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:10px 22px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-weight:600;
+
+}
+
+.pagination button:hover:not(:disabled){
+
+    background:#1d4ed8;
+
+}
+
+.pagination button:disabled{
+
+    background:#cbd5e1;
+
+    cursor:not-allowed;
+
+}
+
+.pagination span{
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+/* No Data */
+
+.no-data{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#64748b;
+
+    font-size:18px;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .table-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+}

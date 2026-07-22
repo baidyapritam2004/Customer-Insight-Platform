@@ -1,0 +1,124 @@
+/* ==========================
+   Sidebar
+========================== */
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:250px;
+    height:100vh;
+
+    background:#0f172a;
+
+    display:flex;
+    flex-direction:column;
+
+    z-index:1000;
+}
+
+/* ==========================
+   Dashboard Content
+========================== */
+
+.dashboard-content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    background:#f5f7fb;
+
+}
+
+/* ==========================
+   Navbar
+========================== */
+
+.navbar{
+
+    position:sticky;
+
+    top:0;
+
+    height:80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 30px;
+
+    background:#fff;
+
+    border-bottom:1px solid #e5e7eb;
+
+    z-index:100;
+
+}
+
+/* ==========================
+   Dashboard Body
+========================== */
+
+.dashboard-main{
+
+    flex:1;
+
+    padding:30px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================
+   Sidebar Footer
+========================== */
+
+.sidebar-footer{
+
+    margin-top:auto;
+
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+
+}

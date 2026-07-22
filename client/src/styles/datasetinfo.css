@@ -1,0 +1,89 @@
+.dataset-card{
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.dataset-header{
+
+    margin-bottom:25px;
+
+}
+
+.dataset-header h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#1e3a8a;
+
+}
+
+.dataset-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.dataset-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#f8fafc;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.dataset-item:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.dataset-item svg{
+
+    font-size:28px;
+
+    color:#2563eb;
+
+}
+
+.dataset-item span{
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+.dataset-item h3{
+
+    margin-top:5px;
+
+    color:#1e293b;
+
+}

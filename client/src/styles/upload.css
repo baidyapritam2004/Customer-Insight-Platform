@@ -1,0 +1,203 @@
+.upload-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:90vh;
+
+    background:#f4f7fb;
+
+}
+
+.upload-card{
+
+    width:600px;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    text-align:center;
+
+}
+
+.upload-icon{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+.upload-card h2{
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+}
+
+.upload-card p{
+
+    color:#64748b;
+
+    margin-bottom:30px;
+
+}
+
+.upload-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    border:2px dashed #3b82f6;
+
+    border-radius:15px;
+
+    padding:40px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.upload-box:hover{
+
+    background:#eff6ff;
+
+}
+
+.csv-icon{
+
+    font-size:50px;
+
+    color:#2563eb;
+
+}
+
+.upload-box input{
+
+    display:none;
+
+}
+
+.file-info{
+
+    margin-top:15px;
+
+    color:#475569;
+
+}
+
+.upload-card button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.upload-card button:hover{
+
+    background:#1d4ed8;
+
+}
+
+.upload-card button:disabled{
+
+    background:#94a3b8;
+
+    cursor:not-allowed;
+
+}
+
+.upload-message{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#16a34a;
+
+    font-weight:600;
+
+}
+
+.upload-box{
+
+    transition:.3s;
+
+}
+
+.upload-box.active{
+
+    background:#dbeafe;
+
+    border-color:#2563eb;
+
+    transform:scale(1.02);
+
+}
+
+.upload-box span{
+
+    color:#64748b;
+
+    font-size:14px;
+
+}

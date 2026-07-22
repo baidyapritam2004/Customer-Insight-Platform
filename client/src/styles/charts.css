@@ -1,0 +1,41 @@
+.chart-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+.chart-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.chart-card h2{
+
+    margin-bottom:20px;
+
+    color:#1e293b;
+
+}
+
+@media(max-width:1000px){
+
+    .chart-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

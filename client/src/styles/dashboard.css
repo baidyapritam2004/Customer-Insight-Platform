@@ -1,0 +1,63 @@
+.dashboard {
+    width: 100%;
+    padding: 0 10px 0 260px;
+    background: #f4f7fb;
+    box-sizing: border-box;
+}
+
+/* Dashboard content */
+
+.dashboard-main{
+    width:100%;
+    padding:30px 0px 30px 0px;
+    background:#f4f7fb;
+}
+
+/* Two-column layout */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    width:100%;
+}
+
+/* Generic cards */
+
+.card,
+.table-card,
+.chart-card{
+
+    background:#fff;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+/* Full-width sections */
+
+.full-width{
+    width:100%;
+}
+
+/* Two-column helper */
+
+.two-column{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+}
+
+/* Responsive */
+
+@media (max-width:900px){
+
+    .dashboard-grid,
+    .two-column{
+        grid-template-columns:1fr;
+    }
+
+}
+
+

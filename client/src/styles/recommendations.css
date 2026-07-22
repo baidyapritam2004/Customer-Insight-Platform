@@ -1,0 +1,202 @@
+/* ===========================
+   AI RECOMMENDATIONS
+=========================== */
+
+.recommendation-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.recommendation-card h2{
+
+    color:#1e293b;
+
+    margin-bottom:25px;
+
+}
+
+/* GRID */
+
+.recommendation-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+}
+
+/* CARD */
+
+.recommendation-item{
+
+    background:#f8fafc;
+
+    border-left:5px solid #2563eb;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    transition:.3s;
+
+    border:1px solid #e2e8f0;
+
+}
+
+.recommendation-item:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+/* HEADER */
+
+.recommendation-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+/* ICON */
+
+.recommendation-icon{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:14px;
+
+    background:#2563eb;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+}
+
+/* TITLE */
+
+.recommendation-item h3{
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+}
+
+/* DESCRIPTION */
+
+.recommendation-item p{
+
+    color:#64748b;
+
+    line-height:1.6;
+
+    font-size:15px;
+
+}
+
+/* PRIORITY */
+
+.priority{
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.priority.high{
+
+    background:#ef4444;
+
+}
+
+.priority.medium{
+
+    background:#f59e0b;
+
+}
+
+.priority.low{
+
+    background:#10b981;
+
+}
+
+/* ===========================
+   SALES PREDICTION
+=========================== */
+
+.prediction-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.prediction-card h2{
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+}
+
+.prediction-card h1{
+
+    color:#16a34a;
+
+    font-size:44px;
+
+    margin-bottom:10px;
+
+}
+
+.prediction-card p{
+
+    color:#64748b;
+
+    font-size:15px;
+
+}

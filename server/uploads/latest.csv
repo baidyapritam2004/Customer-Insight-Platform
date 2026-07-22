@@ -1,0 +1,301 @@
+product_id,name,price,category,rating,order_date,customer_id,quantity,city,state,month
+P001,Adjustable Dumbbells 4,965.56,Sports,3.9,2025-02-18,CUST90620,1,Kolkata,West Bengal,2025-02
+P002,Leather Boots 87,964.41,Clothing,4.3,2026-02-22,CUST66681,1,Delhi,Delhi,2026-02
+P003,Matte Lipstick 5,44.55,Beauty,3.8,2025-12-20,CUST14754,3,Kolkata,West Bengal,2025-12
+P004,Facial Cleanser 72,263.29,Beauty,4.5,2025-08-25,CUST65048,4,Mumbai,Maharashtra,2025-08
+P005,Matte Lipstick 29,587.27,Beauty,3.9,2025-08-22,CUST74283,5,Bengaluru,Karnataka,2025-08
+P006,Wireless Earbuds 90,552.85,Electronics,3.9,2026-04-09,CUST42888,1,Mumbai,Maharashtra,2026-04
+P007,Slim Fit Jeans 14,126.0,Clothing,3.6,2025-02-16,CUST36451,5,Kolkata,West Bengal,2025-02
+P008,Diffuser 34,1050.41,Home,4.6,2026-01-12,CUST57056,2,Chennai,Tamil Nadu,2026-01
+P009,Moisturizing Cream 49,107.96,Beauty,3.9,2025-04-19,CUST71046,1,Pune,Maharashtra,2025-04
+P010,Sleeping Bag 74,254.81,Sports,3.6,2025-02-20,CUST87611,2,Mumbai,Maharashtra,2025-02
+P011,Resistance Bands Set 99,380.46,Sports,3.6,2025-10-12,CUST22665,5,Kolkata,West Bengal,2025-10
+P012,Leather Boots 49,365.69,Clothing,4.5,2026-06-11,CUST17985,3,Hyderabad,Telangana,2026-06
+P013,Memory Foam Pillow 48,465.71,Home,4.5,2026-02-02,CUST64991,3,Delhi,Delhi,2026-02
+P014,Adjustable Dumbbells 78,827.65,Sports,4.3,2026-02-16,CUST81024,3,Pune,Maharashtra,2026-02
+P015,Running Shoes 60,497.01,Clothing,5.0,2026-01-23,CUST43130,2,Pune,Maharashtra,2026-01
+P016,Resistance Bands Set 88,425.61,Sports,4.7,2026-03-01,CUST18234,1,Pune,Maharashtra,2026-03
+P017,Smart Watch 5,1047.72,Electronics,4.1,2025-10-05,CUST60470,4,Pune,Maharashtra,2025-10
+P018,Smart Watch 73,1140.01,Electronics,4.0,2025-03-11,CUST80716,4,Delhi,Delhi,2025-03
+P019,Tennis Racket 51,1150.77,Sports,4.5,2026-03-30,CUST75256,3,Bengaluru,Karnataka,2026-03
+P020,Hoodie Sweatshirt 18,325.13,Clothing,4.3,2025-09-01,CUST10171,1,Bengaluru,Karnataka,2025-09
+P021,Diffuser 55,1167.77,Home,4.1,2025-09-28,CUST29923,1,Kolkata,West Bengal,2025-09
+P022,Running Shoes 66,644.6,Clothing,4.6,2025-07-20,CUST62124,4,Chennai,Tamil Nadu,2025-07
+P023,Wireless Earbuds 81,213.01,Electronics,4.5,2025-04-09,CUST34410,3,Pune,Maharashtra,2025-04
+P024,Moisturizing Cream 50,499.81,Beauty,5.0,2026-05-16,CUST15330,4,Chennai,Tamil Nadu,2026-05
+P025,Perfume Eau de Toilette 71,1119.84,Beauty,3.5,2026-02-27,CUST63833,4,Mumbai,Maharashtra,2026-02
+P026,Adjustable Dumbbells 88,1150.91,Sports,4.6,2025-12-14,CUST88872,3,Pune,Maharashtra,2025-12
+P027,Sleeping Bag 15,385.78,Sports,3.7,2025-08-06,CUST41604,2,Chennai,Tamil Nadu,2025-08
+P028,4K TV 65,991.97,Electronics,4.3,2026-03-21,CUST82900,2,Kolkata,West Bengal,2026-03
+P029,4K TV 82,662.91,Electronics,3.8,2025-10-22,CUST88546,4,Mumbai,Maharashtra,2025-10
+P030,Memory Foam Pillow 70,1239.82,Home,4.9,2025-08-28,CUST20612,2,Chennai,Tamil Nadu,2025-08
+P031,VR Headset 42,638.25,Electronics,3.7,2025-09-01,CUST99893,4,Bengaluru,Karnataka,2025-09
+P032,LED Desk Lamp 31,80.95,Home,4.8,2025-05-03,CUST81770,1,Mumbai,Maharashtra,2025-05
+P033,Laptop Pro 94,634.86,Electronics,3.6,2025-02-19,CUST43964,1,Bengaluru,Karnataka,2025-02
+P034,Hyaluronic Serum 17,859.71,Beauty,4.9,2025-10-27,CUST20738,3,Pune,Maharashtra,2025-10
+P035,Hoodie Sweatshirt 68,1134.92,Clothing,4.1,2026-04-25,CUST88881,5,Hyderabad,Telangana,2026-04
+P036,Wool Scarf 97,950.52,Clothing,3.8,2025-02-04,CUST11879,5,Mumbai,Maharashtra,2025-02
+P037,Ergonomic Chair 86,846.93,Home,4.2,2026-04-09,CUST94000,3,Chennai,Tamil Nadu,2026-04
+P038,Clay Face Mask 16,326.78,Beauty,3.6,2026-03-23,CUST92412,1,Kolkata,West Bengal,2026-03
+P039,VR Headset 71,303.76,Electronics,3.8,2025-05-30,CUST50864,1,Hyderabad,Telangana,2025-05
+P040,Smartphone X 30,93.21,Electronics,3.5,2025-12-08,CUST10624,1,Hyderabad,Telangana,2025-12
+P041,Air Purifier 66,313.97,Home,4.5,2025-03-31,CUST14919,1,Mumbai,Maharashtra,2025-03
+P042,Wool Scarf 17,942.01,Clothing,4.8,2026-02-14,CUST45209,4,Kolkata,West Bengal,2026-02
+P043,Clay Face Mask 32,1021.29,Beauty,4.7,2026-01-14,CUST19277,3,Hyderabad,Telangana,2026-01
+P044,Leather Boots 13,858.71,Clothing,4.0,2025-07-11,CUST41144,5,Bengaluru,Karnataka,2025-07
+P045,Kids Storybook 94,76.09,Books,4.5,2025-02-06,CUST98964,4,Pune,Maharashtra,2025-02
+P046,Adjustable Dumbbells 8,526.98,Sports,4.0,2026-06-09,CUST18215,1,Hyderabad,Telangana,2026-06
+P047,Smart Watch 25,252.12,Electronics,4.2,2025-08-29,CUST76620,3,Chennai,Tamil Nadu,2025-08
+P048,Startup Growth Guide 36,604.63,Books,4.8,2026-04-28,CUST90511,5,Bengaluru,Karnataka,2026-04
+P049,Mechanical Keyboard 71,132.68,Electronics,4.5,2026-01-02,CUST39371,1,Hyderabad,Telangana,2026-01
+P050,Facial Cleanser 12,1204.71,Beauty,4.8,2026-02-25,CUST60443,4,Delhi,Delhi,2026-02
+P051,Active Leggings 63,628.87,Clothing,4.8,2026-02-15,CUST14993,3,Delhi,Delhi,2026-02
+P052,Wireless Earbuds 49,8.78,Electronics,4.1,2025-04-16,CUST90524,2,Hyderabad,Telangana,2025-04
+P053,History Biography 55,907.38,Books,4.6,2025-07-16,CUST49924,4,Pune,Maharashtra,2025-07
+P054,Clay Face Mask 20,251.72,Beauty,3.8,2025-09-10,CUST36806,4,Chennai,Tamil Nadu,2025-09
+P055,VR Headset 95,707.59,Electronics,4.6,2025-09-26,CUST57076,3,Bengaluru,Karnataka,2025-09
+P056,Smartphone X 75,622.95,Electronics,4.9,2025-01-24,CUST39103,1,Chennai,Tamil Nadu,2025-01
+P057,Hyaluronic Serum 8,1249.24,Beauty,3.6,2025-10-23,CUST46537,3,Mumbai,Maharashtra,2025-10
+P058,Leather Boots 77,93.93,Clothing,4.8,2025-03-25,CUST16970,1,Chennai,Tamil Nadu,2025-03
+P059,Sci-Fi Epic Novel 73,324.59,Books,4.4,2026-02-06,CUST10049,4,Delhi,Delhi,2026-02
+P060,Moisturizing Cream 54,856.63,Beauty,4.3,2026-01-04,CUST74503,5,Mumbai,Maharashtra,2026-01
+P061,LED Desk Lamp 27,872.62,Home,4.0,2026-05-14,CUST34401,4,Delhi,Delhi,2026-05
+P062,Ergonomic Chair 17,875.16,Home,3.9,2026-02-07,CUST17350,5,Hyderabad,Telangana,2026-02
+P063,Air Purifier 2,599.01,Home,5.0,2025-07-17,CUST12972,5,Bengaluru,Karnataka,2025-07
+P064,Laptop Pro 69,281.81,Electronics,3.9,2026-06-07,CUST53522,4,Kolkata,West Bengal,2026-06
+P065,Air Purifier 32,484.16,Home,3.7,2025-08-10,CUST21323,5,Chennai,Tamil Nadu,2025-08
+P066,Perfume Eau de Toilette 79,1279.1,Beauty,4.7,2025-06-25,CUST82568,5,Pune,Maharashtra,2025-06
+P067,Facial Cleanser 86,1063.32,Beauty,3.9,2026-05-04,CUST84365,4,Kolkata,West Bengal,2026-05
+P068,Adjustable Dumbbells 18,348.21,Sports,4.8,2025-07-20,CUST54131,5,Hyderabad,Telangana,2025-07
+P069,Water Bottle Insulated 35,370.58,Sports,3.8,2025-02-11,CUST26883,1,Kolkata,West Bengal,2025-02
+P070,Duo Coffee Maker 88,826.69,Home,3.9,2025-09-11,CUST28161,3,Hyderabad,Telangana,2025-09
+P071,History Biography 7,125.42,Books,4.1,2026-03-06,CUST15136,1,Kolkata,West Bengal,2026-03
+P072,Robot Vacuum 1,437.61,Home,3.7,2025-04-13,CUST18639,4,Hyderabad,Telangana,2025-04
+P073,Memory Foam Pillow 95,577.73,Home,4.6,2025-09-07,CUST95300,4,Bengaluru,Karnataka,2025-09
+P074,Facial Cleanser 15,103.36,Beauty,4.8,2025-03-12,CUST71991,1,Kolkata,West Bengal,2025-03
+P075,Wool Scarf 5,1085.96,Clothing,4.4,2026-01-06,CUST75975,1,Pune,Maharashtra,2026-01
+P076,Active Leggings 17,60.12,Clothing,4.0,2025-09-14,CUST29743,4,Bengaluru,Karnataka,2025-09
+P077,Bluetooth Speaker 27,888.58,Electronics,4.5,2025-06-28,CUST33621,4,Hyderabad,Telangana,2025-06
+P078,Cookware Set 53,1266.14,Home,4.6,2025-05-03,CUST81288,4,Pune,Maharashtra,2025-05
+P079,Running Shoes 23,1146.54,Clothing,3.5,2025-11-01,CUST61046,1,Delhi,Delhi,2025-11
+P080,Sleeping Bag 53,1044.08,Sports,4.8,2025-12-28,CUST73080,2,Delhi,Delhi,2025-12
+P081,Hoodie Sweatshirt 21,1024.85,Clothing,3.7,2026-05-23,CUST35221,3,Mumbai,Maharashtra,2026-05
+P082,Mechanical Keyboard 29,264.24,Electronics,4.9,2025-08-25,CUST56088,4,Pune,Maharashtra,2025-08
+P083,LED Desk Lamp 30,294.45,Home,4.5,2025-03-28,CUST14388,5,Mumbai,Maharashtra,2025-03
+P084,Self-Help Journal 36,1124.46,Books,5.0,2026-03-26,CUST18283,4,Delhi,Delhi,2026-03
+P085,Standing Desk 83,665.16,Home,4.5,2025-12-07,CUST91469,2,Chennai,Tamil Nadu,2025-12
+P086,Lip Balm Pack 4,155.24,Beauty,5.0,2026-01-14,CUST34187,4,Kolkata,West Bengal,2026-01
+P087,Silk Tie 34,55.49,Clothing,4.4,2025-02-22,CUST79873,3,Hyderabad,Telangana,2025-02
+P088,Standing Desk 56,790.42,Home,4.3,2025-06-18,CUST20997,5,Mumbai,Maharashtra,2025-06
+P089,Python Coding Manual 33,63.43,Books,4.2,2026-02-19,CUST97939,5,Mumbai,Maharashtra,2026-02
+P090,Hair Oil 88,936.93,Beauty,4.6,2026-03-26,CUST58463,4,Hyderabad,Telangana,2026-03
+P091,Resistance Bands Set 47,564.09,Sports,4.9,2025-08-24,CUST13928,3,Kolkata,West Bengal,2025-08
+P092,Diffuser 41,864.41,Home,3.7,2026-03-11,CUST74251,5,Mumbai,Maharashtra,2026-03
+P093,Cookware Set 40,868.95,Home,4.0,2026-03-31,CUST15995,4,Bengaluru,Karnataka,2026-03
+P094,Camping Tent 4-Person 71,170.7,Sports,4.1,2025-07-29,CUST52509,5,Delhi,Delhi,2025-07
+P095,Startup Growth Guide 79,742.41,Books,4.1,2026-04-30,CUST96979,2,Delhi,Delhi,2026-04
+P096,4K TV 37,277.97,Electronics,4.7,2025-06-05,CUST52440,3,Pune,Maharashtra,2025-06
+P097,Lip Balm Pack 60,577.66,Beauty,4.5,2025-05-10,CUST16424,2,Delhi,Delhi,2025-05
+P098,Clay Face Mask 95,225.57,Beauty,3.6,2026-01-04,CUST50769,4,Mumbai,Maharashtra,2026-01
+P099,Lip Balm Pack 12,1065.03,Beauty,4.6,2025-12-10,CUST33046,3,Kolkata,West Bengal,2025-12
+P100,Camping Tent 4-Person 29,1049.68,Sports,3.7,2025-03-17,CUST23767,5,Pune,Maharashtra,2025-03
+P101,Smart Watch 61,796.98,Electronics,4.7,2026-03-26,CUST53216,5,Chennai,Tamil Nadu,2026-03
+P102,Cookbook Recipes 81,750.91,Books,4.6,2025-04-18,CUST89450,5,Pune,Maharashtra,2025-04
+P103,Kids Storybook 52,321.71,Books,4.5,2026-03-11,CUST59568,5,Bengaluru,Karnataka,2026-03
+P104,Laptop Pro 100,556.13,Electronics,3.8,2025-01-04,CUST99544,2,Delhi,Delhi,2025-01
+P105,Tennis Racket 7,727.27,Sports,4.9,2026-03-07,CUST82750,2,Mumbai,Maharashtra,2026-03
+P106,Mechanical Keyboard 18,1043.02,Electronics,4.5,2026-03-01,CUST50404,3,Pune,Maharashtra,2026-03
+P107,Lip Balm Pack 97,1159.5,Beauty,4.4,2026-02-26,CUST12087,2,Delhi,Delhi,2026-02
+P108,Hiking Backpack 71,583.0,Sports,3.7,2025-12-26,CUST39154,1,Bengaluru,Karnataka,2025-12
+P109,Kids Storybook 34,978.79,Books,4.8,2025-09-12,CUST96927,5,Bengaluru,Karnataka,2025-09
+P110,Cookware Set 63,817.0,Home,3.9,2026-01-16,CUST18878,5,Delhi,Delhi,2026-01
+P111,4K TV 31,357.59,Electronics,4.0,2025-05-30,CUST72175,3,Mumbai,Maharashtra,2025-05
+P112,Moisturizing Cream 18,201.16,Beauty,4.1,2026-02-26,CUST82979,5,Chennai,Tamil Nadu,2026-02
+P113,Cotton T-Shirt 9,542.83,Clothing,4.0,2025-10-28,CUST39437,5,Delhi,Delhi,2025-10
+P114,Cookbook Recipes 8,273.63,Books,4.1,2025-09-05,CUST83026,4,Kolkata,West Bengal,2025-09
+P115,Facial Cleanser 98,750.93,Beauty,4.2,2025-10-01,CUST95038,1,Chennai,Tamil Nadu,2025-10
+P116,LED Desk Lamp 97,510.63,Home,4.8,2025-11-04,CUST50824,5,Pune,Maharashtra,2025-11
+P117,Python Coding Manual 63,289.92,Books,4.2,2025-01-21,CUST94706,3,Hyderabad,Telangana,2025-01
+P118,Gaming Mouse 44,871.51,Electronics,4.7,2025-03-17,CUST64491,5,Delhi,Delhi,2025-03
+P119,Water Bottle Insulated 60,1195.88,Sports,5.0,2025-05-13,CUST51260,5,Hyderabad,Telangana,2025-05
+P120,Facial Cleanser 51,771.9,Beauty,4.5,2025-03-03,CUST25404,3,Pune,Maharashtra,2025-03
+P121,Gaming Mouse 18,1127.7,Electronics,3.8,2025-08-26,CUST92417,4,Pune,Maharashtra,2025-08
+P122,Ergonomic Chair 42,279.88,Home,4.0,2025-12-27,CUST24832,5,Delhi,Delhi,2025-12
+P123,History Biography 97,1236.85,Books,4.1,2025-12-20,CUST69183,5,Hyderabad,Telangana,2025-12
+P124,Mechanical Keyboard 3,975.23,Electronics,3.6,2025-09-12,CUST45003,1,Mumbai,Maharashtra,2025-09
+P125,Duo Coffee Maker 84,94.78,Home,4.9,2026-04-07,CUST12643,1,Chennai,Tamil Nadu,2026-04
+P126,Smartphone X 32,263.96,Electronics,3.5,2025-11-02,CUST97972,5,Bengaluru,Karnataka,2025-11
+P127,Cotton T-Shirt 17,618.78,Clothing,3.7,2025-02-12,CUST70305,3,Delhi,Delhi,2025-02
+P128,Summer Dress 90,337.57,Clothing,4.1,2026-02-18,CUST70527,2,Kolkata,West Bengal,2026-02
+P129,Moisturizing Cream 100,1066.17,Beauty,4.9,2025-11-07,CUST91367,4,Chennai,Tamil Nadu,2025-11
+P130,VR Headset 4,1207.97,Electronics,4.4,2025-12-09,CUST15818,5,Mumbai,Maharashtra,2025-12
+P131,Cookbook Recipes 92,262.63,Books,4.4,2025-11-02,CUST64769,4,Chennai,Tamil Nadu,2025-11
+P132,Resistance Bands Set 14,908.16,Sports,4.0,2025-10-26,CUST88840,2,Pune,Maharashtra,2025-10
+P133,Adjustable Dumbbells 73,1018.72,Sports,4.0,2025-02-18,CUST37559,5,Hyderabad,Telangana,2025-02
+P134,Self-Help Journal 9,660.7,Books,4.0,2025-10-29,CUST32416,4,Pune,Maharashtra,2025-10
+P135,Kids Storybook 14,566.97,Books,4.0,2026-03-06,CUST41420,1,Delhi,Delhi,2026-03
+P136,Startup Growth Guide 56,233.91,Books,4.3,2025-06-14,CUST38493,5,Delhi,Delhi,2025-06
+P137,Camping Tent 4-Person 79,1051.8,Sports,4.3,2025-11-22,CUST18749,4,Pune,Maharashtra,2025-11
+P138,Kids Storybook 56,1074.49,Books,4.4,2025-01-17,CUST89436,5,Mumbai,Maharashtra,2025-01
+P139,Duo Coffee Maker 12,366.92,Home,4.2,2025-07-07,CUST66109,1,Kolkata,West Bengal,2025-07
+P140,Cookbook Recipes 44,43.13,Books,4.8,2025-08-24,CUST80332,2,Mumbai,Maharashtra,2025-08
+P141,Summer Dress 28,465.13,Clothing,3.9,2026-06-15,CUST41118,4,Pune,Maharashtra,2026-06
+P142,Diffuser 90,1144.85,Home,4.3,2025-04-26,CUST57523,2,Hyderabad,Telangana,2025-04
+P143,Sunscreen SPF 50 11,318.3,Beauty,4.1,2025-05-30,CUST61447,1,Hyderabad,Telangana,2025-05
+P144,Sunscreen SPF 50 89,622.05,Beauty,4.6,2025-08-09,CUST58677,3,Mumbai,Maharashtra,2025-08
+P145,Mystery Thriller Book 12,386.73,Books,4.1,2026-06-21,CUST53539,1,Hyderabad,Telangana,2026-06
+P146,Hoodie Sweatshirt 85,758.52,Clothing,4.2,2026-04-06,CUST67646,1,Mumbai,Maharashtra,2026-04
+P147,Lip Balm Pack 55,1295.63,Beauty,4.3,2025-01-19,CUST17246,4,Kolkata,West Bengal,2025-01
+P148,Slow Cooker 35,402.76,Home,3.8,2025-05-07,CUST45988,2,Mumbai,Maharashtra,2025-05
+P149,Resistance Bands Set 41,160.69,Sports,4.3,2026-03-20,CUST85702,2,Pune,Maharashtra,2026-03
+P150,Water Bottle Insulated 25,285.99,Sports,4.2,2025-02-01,CUST57658,1,Mumbai,Maharashtra,2025-02
+P151,Camping Tent 4-Person 13,1083.41,Sports,3.9,2026-04-08,CUST17820,2,Bengaluru,Karnataka,2026-04
+P152,Memory Foam Pillow 39,24.3,Home,4.3,2025-06-01,CUST98448,5,Chennai,Tamil Nadu,2025-06
+P153,Robot Vacuum 7,722.04,Home,4.5,2026-05-11,CUST22139,5,Bengaluru,Karnataka,2026-05
+P154,Summer Dress 14,1135.29,Clothing,4.4,2025-06-08,CUST52643,5,Delhi,Delhi,2025-06
+P155,Kids Storybook 57,446.86,Books,4.9,2025-08-23,CUST77901,5,Bengaluru,Karnataka,2025-08
+P156,Slow Cooker 15,1069.81,Home,4.1,2025-12-24,CUST43867,4,Mumbai,Maharashtra,2025-12
+P157,VR Headset 81,894.26,Electronics,3.7,2025-03-10,CUST98290,4,Bengaluru,Karnataka,2025-03
+P158,Perfume Eau de Toilette 11,1292.12,Beauty,3.7,2025-10-28,CUST81251,4,Bengaluru,Karnataka,2025-10
+P159,Python Coding Manual 100,682.2,Books,4.2,2025-09-30,CUST28800,2,Chennai,Tamil Nadu,2025-09
+P160,History Biography 76,1287.09,Books,4.0,2026-02-28,CUST17364,3,Pune,Maharashtra,2026-02
+P161,Facial Cleanser 79,1248.37,Beauty,3.6,2026-06-22,CUST53103,5,Hyderabad,Telangana,2026-06
+P162,Cotton T-Shirt 34,860.58,Clothing,3.7,2025-12-25,CUST50192,2,Pune,Maharashtra,2025-12
+P163,Wool Scarf 10,208.54,Clothing,4.1,2025-08-09,CUST47918,2,Pune,Maharashtra,2025-08
+P164,Tennis Racket 38,48.23,Sports,3.9,2025-08-08,CUST87151,3,Hyderabad,Telangana,2025-08
+P165,Slow Cooker 10,895.47,Home,4.9,2025-08-14,CUST95612,4,Chennai,Tamil Nadu,2025-08
+P166,Resistance Bands Set 55,154.51,Sports,3.8,2026-03-16,CUST49325,3,Mumbai,Maharashtra,2026-03
+P167,Hoodie Sweatshirt 19,98.39,Clothing,3.7,2025-06-23,CUST88171,2,Kolkata,West Bengal,2025-06
+P168,Diffuser 96,1072.56,Home,4.9,2025-04-01,CUST49768,5,Hyderabad,Telangana,2025-04
+P169,Sci-Fi Epic Novel 60,897.14,Books,4.5,2025-06-30,CUST72438,1,Pune,Maharashtra,2025-06
+P170,Cookware Set 70,644.96,Home,3.6,2025-01-13,CUST44039,1,Delhi,Delhi,2025-01
+P171,Gaming Mouse 95,423.07,Electronics,3.9,2025-02-27,CUST48313,1,Delhi,Delhi,2025-02
+P172,Smart Watch 87,1087.72,Electronics,4.4,2025-02-18,CUST90942,2,Delhi,Delhi,2025-02
+P173,4K TV 74,58.05,Electronics,4.6,2026-02-21,CUST29021,4,Bengaluru,Karnataka,2026-02
+P174,Kids Storybook 36,240.84,Books,4.4,2026-01-26,CUST98522,5,Chennai,Tamil Nadu,2026-01
+P175,Tennis Racket 12,614.18,Sports,4.1,2026-01-12,CUST32713,1,Hyderabad,Telangana,2026-01
+P176,Air Purifier 21,432.76,Home,4.5,2025-09-07,CUST83393,5,Pune,Maharashtra,2025-09
+P177,Ergonomic Chair 98,717.82,Home,4.2,2026-01-23,CUST36861,4,Bengaluru,Karnataka,2026-01
+P178,LED Desk Lamp 42,155.99,Home,4.7,2025-03-29,CUST29452,3,Delhi,Delhi,2025-03
+P179,Facial Cleanser 85,1130.95,Beauty,4.2,2026-05-02,CUST99941,3,Chennai,Tamil Nadu,2026-05
+P180,Smart Watch 67,474.13,Electronics,4.6,2025-09-28,CUST89573,2,Hyderabad,Telangana,2025-09
+P181,Tennis Racket 98,72.78,Sports,3.9,2026-05-22,CUST11176,3,Hyderabad,Telangana,2026-05
+P182,Hoodie Sweatshirt 57,1145.81,Clothing,4.2,2025-03-24,CUST96349,4,Delhi,Delhi,2025-03
+P183,VR Headset 31,924.45,Electronics,4.0,2025-09-26,CUST50947,2,Chennai,Tamil Nadu,2025-09
+P184,Tablet Air 53,126.6,Electronics,5.0,2026-01-12,CUST24838,5,Delhi,Delhi,2026-01
+P185,Mechanical Keyboard 16,844.13,Electronics,3.7,2025-09-25,CUST49503,5,Chennai,Tamil Nadu,2025-09
+P186,Camping Tent 4-Person 66,918.79,Sports,4.1,2025-08-29,CUST37285,2,Hyderabad,Telangana,2025-08
+P187,Kids Storybook 32,597.07,Books,3.7,2025-03-31,CUST23318,5,Hyderabad,Telangana,2025-03
+P188,Silk Tie 66,971.69,Clothing,3.7,2025-07-25,CUST97007,2,Kolkata,West Bengal,2025-07
+P189,4K TV 99,1028.26,Electronics,4.1,2025-05-09,CUST61856,3,Pune,Maharashtra,2025-05
+P190,Perfume Eau de Toilette 1,371.98,Beauty,3.9,2025-06-12,CUST44980,4,Mumbai,Maharashtra,2025-06
+P191,Clay Face Mask 20,583.82,Beauty,4.2,2026-01-05,CUST52292,5,Kolkata,West Bengal,2026-01
+P192,Cookware Set 98,709.19,Home,4.2,2025-12-07,CUST42378,4,Chennai,Tamil Nadu,2025-12
+P193,Duo Coffee Maker 90,315.0,Home,4.1,2025-11-24,CUST23206,4,Pune,Maharashtra,2025-11
+P194,Mystery Thriller Book 41,969.64,Books,4.6,2025-07-15,CUST72606,4,Hyderabad,Telangana,2025-07
+P195,Cookbook Recipes 85,1031.35,Books,4.5,2026-06-03,CUST75831,2,Bengaluru,Karnataka,2026-06
+P196,Summer Dress 5,169.35,Clothing,4.9,2025-02-17,CUST60173,1,Delhi,Delhi,2025-02
+P197,Air Purifier 57,135.02,Home,4.9,2025-07-04,CUST99203,3,Kolkata,West Bengal,2025-07
+P198,Wireless Earbuds 53,1132.98,Electronics,5.0,2025-03-05,CUST31868,2,Chennai,Tamil Nadu,2025-03
+P199,Mechanical Keyboard 34,444.09,Electronics,4.5,2025-07-03,CUST70920,1,Hyderabad,Telangana,2025-07
+P200,Adjustable Dumbbells 43,1108.92,Sports,4.8,2026-06-04,CUST82221,1,Pune,Maharashtra,2026-06
+P201,Self-Help Journal 81,936.01,Books,4.6,2025-07-17,CUST80789,1,Bengaluru,Karnataka,2025-07
+P202,Facial Cleanser 80,94.53,Beauty,4.4,2026-05-06,CUST79046,3,Hyderabad,Telangana,2026-05
+P203,Duo Coffee Maker 96,122.94,Home,5.0,2025-09-25,CUST44068,5,Mumbai,Maharashtra,2025-09
+P204,Adjustable Dumbbells 57,221.27,Sports,3.9,2026-01-13,CUST29604,4,Bengaluru,Karnataka,2026-01
+P205,Smartphone X 42,1036.2,Electronics,3.9,2025-09-05,CUST45429,5,Delhi,Delhi,2025-09
+P206,Ergonomic Chair 19,321.98,Home,4.1,2025-05-24,CUST83724,5,Hyderabad,Telangana,2025-05
+P207,Water Bottle Insulated 22,232.53,Sports,4.4,2026-02-17,CUST25957,3,Chennai,Tamil Nadu,2026-02
+P208,Python Coding Manual 64,1187.19,Books,3.7,2026-06-08,CUST15831,5,Chennai,Tamil Nadu,2026-06
+P209,History Biography 59,336.38,Books,3.5,2025-05-23,CUST57315,4,Chennai,Tamil Nadu,2025-05
+P210,History Biography 87,713.29,Books,3.6,2026-02-25,CUST13356,5,Delhi,Delhi,2026-02
+P211,Diffuser 39,832.78,Home,4.1,2025-05-22,CUST20240,1,Mumbai,Maharashtra,2025-05
+P212,Slow Cooker 39,263.78,Home,4.1,2026-01-23,CUST35725,3,Delhi,Delhi,2026-01
+P213,Sci-Fi Epic Novel 31,499.48,Books,4.0,2026-03-03,CUST45705,2,Hyderabad,Telangana,2026-03
+P214,LED Desk Lamp 3,1271.45,Home,4.5,2025-08-31,CUST48182,1,Chennai,Tamil Nadu,2025-08
+P215,Robot Vacuum 73,1125.39,Home,4.7,2026-02-02,CUST83896,1,Bengaluru,Karnataka,2026-02
+P216,VR Headset 96,648.76,Electronics,4.9,2025-05-28,CUST75036,1,Pune,Maharashtra,2025-05
+P217,Duo Coffee Maker 78,1043.69,Home,3.8,2025-02-12,CUST11461,4,Delhi,Delhi,2025-02
+P218,Silk Tie 33,883.02,Clothing,4.6,2025-02-22,CUST10644,3,Mumbai,Maharashtra,2025-02
+P219,Water Bottle Insulated 81,131.72,Sports,4.4,2025-08-30,CUST92849,4,Chennai,Tamil Nadu,2025-08
+P220,4K TV 57,49.16,Electronics,4.0,2026-05-03,CUST80391,1,Chennai,Tamil Nadu,2026-05
+P221,Leather Boots 38,428.76,Clothing,4.1,2025-03-10,CUST44512,5,Pune,Maharashtra,2025-03
+P222,Running Shoes 70,1140.13,Clothing,4.0,2025-09-04,CUST58777,5,Hyderabad,Telangana,2025-09
+P223,Perfume Eau de Toilette 22,338.51,Beauty,4.7,2026-01-16,CUST41833,5,Bengaluru,Karnataka,2026-01
+P224,History Biography 96,1132.28,Books,4.7,2025-04-20,CUST83669,2,Chennai,Tamil Nadu,2025-04
+P225,Sci-Fi Epic Novel 19,981.86,Books,3.8,2026-01-25,CUST80234,5,Bengaluru,Karnataka,2026-01
+P226,Hiking Backpack 72,479.3,Sports,4.7,2025-06-15,CUST24727,2,Mumbai,Maharashtra,2025-06
+P227,4K TV 69,165.91,Electronics,4.1,2026-03-13,CUST65045,3,Kolkata,West Bengal,2026-03
+P228,Camping Tent 4-Person 75,499.04,Sports,4.5,2025-11-09,CUST93877,4,Hyderabad,Telangana,2025-11
+P229,Air Purifier 87,308.56,Home,3.5,2025-10-23,CUST58421,1,Pune,Maharashtra,2025-10
+P230,Lip Balm Pack 79,292.44,Beauty,3.6,2025-04-06,CUST89836,4,Pune,Maharashtra,2025-04
+P231,History Biography 84,534.32,Books,3.7,2025-09-08,CUST40555,5,Kolkata,West Bengal,2025-09
+P232,4K TV 64,156.25,Electronics,3.9,2026-04-08,CUST46536,5,Chennai,Tamil Nadu,2026-04
+P233,Hyaluronic Serum 50,593.01,Beauty,4.5,2025-01-11,CUST24053,2,Delhi,Delhi,2025-01
+P234,Hiking Backpack 76,966.49,Sports,3.7,2026-02-14,CUST92957,3,Delhi,Delhi,2026-02
+P235,Sci-Fi Epic Novel 63,802.64,Books,4.9,2025-09-24,CUST45765,2,Delhi,Delhi,2025-09
+P236,Robot Vacuum 89,485.46,Home,4.2,2026-01-24,CUST53578,1,Delhi,Delhi,2026-01
+P237,Slim Fit Jeans 13,1275.31,Clothing,4.1,2025-12-25,CUST71086,1,Chennai,Tamil Nadu,2025-12
+P238,Sleeping Bag 8,521.18,Sports,3.8,2025-08-22,CUST86265,1,Pune,Maharashtra,2025-08
+P239,Mechanical Keyboard 12,863.61,Electronics,4.5,2025-06-16,CUST99507,2,Delhi,Delhi,2025-06
+P240,Facial Cleanser 7,1024.1,Beauty,3.9,2025-12-05,CUST65154,1,Pune,Maharashtra,2025-12
+P241,Silk Tie 27,94.77,Clothing,4.6,2025-03-17,CUST86013,1,Hyderabad,Telangana,2025-03
+P242,Silk Tie 28,1058.08,Clothing,3.8,2025-11-12,CUST55221,3,Chennai,Tamil Nadu,2025-11
+P243,Silk Tie 1,364.78,Clothing,5.0,2025-02-21,CUST77781,4,Mumbai,Maharashtra,2025-02
+P244,Wool Scarf 33,1039.27,Clothing,3.7,2025-12-17,CUST84731,5,Kolkata,West Bengal,2025-12
+P245,Wireless Earbuds 2,469.56,Electronics,4.7,2025-12-06,CUST15804,3,Kolkata,West Bengal,2025-12
+P246,Lip Balm Pack 3,231.46,Beauty,3.6,2025-02-15,CUST61598,1,Bengaluru,Karnataka,2025-02
+P247,Hiking Backpack 68,153.05,Sports,3.6,2026-02-14,CUST21016,2,Hyderabad,Telangana,2026-02
+P248,Self-Help Journal 66,774.19,Books,4.2,2025-08-13,CUST78453,1,Hyderabad,Telangana,2025-08
+P249,Silk Tie 6,947.04,Clothing,4.9,2026-03-01,CUST25294,2,Bengaluru,Karnataka,2026-03
+P250,Camping Tent 4-Person 59,838.47,Sports,3.5,2025-01-23,CUST57934,2,Delhi,Delhi,2025-01
+P251,Cookbook Recipes 55,893.8,Books,4.2,2025-04-07,CUST57023,3,Hyderabad,Telangana,2025-04
+P252,Sci-Fi Epic Novel 11,422.8,Books,3.7,2025-09-24,CUST62533,3,Chennai,Tamil Nadu,2025-09
+P253,Hoodie Sweatshirt 80,825.19,Clothing,4.3,2025-04-12,CUST35076,1,Pune,Maharashtra,2025-04
+P254,Ergonomic Chair 77,692.53,Home,4.2,2025-06-28,CUST45334,1,Mumbai,Maharashtra,2025-06
+P255,Matte Lipstick 13,1032.26,Beauty,3.7,2025-12-23,CUST85735,5,Hyderabad,Telangana,2025-12
+P256,Resistance Bands Set 56,590.3,Sports,3.8,2025-03-20,CUST81280,4,Pune,Maharashtra,2025-03
+P257,Slow Cooker 52,544.28,Home,3.6,2026-01-01,CUST91867,5,Kolkata,West Bengal,2026-01
+P258,Self-Help Journal 86,335.82,Books,4.9,2025-02-25,CUST54957,5,Kolkata,West Bengal,2025-02
+P259,Tennis Racket 9,124.03,Sports,3.6,2025-04-05,CUST30189,1,Kolkata,West Bengal,2025-04
+P260,Sci-Fi Epic Novel 96,961.99,Books,4.7,2025-11-14,CUST16349,3,Kolkata,West Bengal,2025-11
+P261,Facial Cleanser 76,1243.86,Beauty,4.3,2026-03-05,CUST92961,5,Kolkata,West Bengal,2026-03
+P262,Adjustable Dumbbells 53,463.55,Sports,4.5,2025-04-03,CUST96977,1,Pune,Maharashtra,2025-04
+P263,Mystery Thriller Book 37,782.92,Books,4.0,2025-06-11,CUST77771,1,Mumbai,Maharashtra,2025-06
+P264,Hair Oil 28,206.21,Beauty,4.2,2026-05-15,CUST48090,4,Bengaluru,Karnataka,2026-05
+P265,Bluetooth Speaker 72,481.61,Electronics,4.6,2026-06-19,CUST14285,2,Pune,Maharashtra,2026-06
+P266,Sunscreen SPF 50 55,1099.62,Beauty,5.0,2025-11-10,CUST25882,5,Hyderabad,Telangana,2025-11
+P267,Hair Oil 4,794.03,Beauty,4.5,2025-08-30,CUST45051,1,Pune,Maharashtra,2025-08
+P268,Camping Tent 4-Person 4,239.45,Sports,4.6,2025-07-07,CUST83927,3,Chennai,Tamil Nadu,2025-07
+P269,Standing Desk 45,13.89,Home,4.8,2025-11-27,CUST39208,5,Mumbai,Maharashtra,2025-11
+P270,Matte Lipstick 9,189.58,Beauty,4.4,2025-11-16,CUST71112,2,Chennai,Tamil Nadu,2025-11
+P271,Laptop Pro 96,692.43,Electronics,4.1,2025-06-09,CUST11713,4,Kolkata,West Bengal,2025-06
+P272,Self-Help Journal 21,484.84,Books,4.6,2025-01-13,CUST31161,5,Kolkata,West Bengal,2025-01
+P273,Moisturizing Cream 7,207.31,Beauty,4.6,2025-03-23,CUST68837,3,Hyderabad,Telangana,2025-03
+P274,Laptop Pro 35,579.38,Electronics,4.1,2026-06-02,CUST79239,4,Delhi,Delhi,2026-06
+P275,Clay Face Mask 54,359.47,Beauty,4.6,2025-08-14,CUST79862,1,Chennai,Tamil Nadu,2025-08
+P276,Bluetooth Speaker 56,149.48,Electronics,4.5,2025-09-18,CUST37989,4,Delhi,Delhi,2025-09
+P277,Clay Face Mask 68,869.26,Beauty,3.6,2025-09-10,CUST45722,4,Kolkata,West Bengal,2025-09
+P278,Mystery Thriller Book 1,270.51,Books,4.9,2026-02-27,CUST86572,2,Chennai,Tamil Nadu,2026-02
+P279,Hoodie Sweatshirt 38,430.58,Clothing,3.5,2025-02-05,CUST92144,4,Mumbai,Maharashtra,2025-02
+P280,Hiking Backpack 23,173.16,Sports,4.3,2025-02-14,CUST70630,1,Kolkata,West Bengal,2025-02
+P281,Wool Scarf 72,1084.35,Clothing,4.7,2025-05-29,CUST48469,1,Pune,Maharashtra,2025-05
+P282,Gaming Mouse 95,60.73,Electronics,3.5,2025-09-20,CUST16864,4,Hyderabad,Telangana,2025-09
+P283,Bluetooth Speaker 74,561.48,Electronics,4.1,2025-12-29,CUST37938,5,Bengaluru,Karnataka,2025-12
+P284,Hiking Backpack 38,155.02,Sports,3.5,2025-09-22,CUST19530,3,Delhi,Delhi,2025-09
+P285,Memory Foam Pillow 80,601.36,Home,4.5,2025-08-27,CUST59816,4,Delhi,Delhi,2025-08
+P286,Air Purifier 56,1098.75,Home,3.9,2026-05-22,CUST91200,3,Bengaluru,Karnataka,2026-05
+P287,Matte Lipstick 68,107.76,Beauty,4.8,2025-03-28,CUST64175,4,Hyderabad,Telangana,2025-03
+P288,Sleeping Bag 29,436.98,Sports,3.8,2025-11-05,CUST34424,4,Mumbai,Maharashtra,2025-11
+P289,Moisturizing Cream 68,665.87,Beauty,4.9,2025-10-20,CUST31359,5,Mumbai,Maharashtra,2025-10
+P290,Standing Desk 94,1245.93,Home,4.5,2025-09-13,CUST97390,2,Chennai,Tamil Nadu,2025-09
+P291,Cotton T-Shirt 14,195.49,Clothing,3.8,2026-03-13,CUST76912,1,Mumbai,Maharashtra,2026-03
+P292,Hyaluronic Serum 98,988.33,Beauty,3.6,2025-05-25,CUST97228,3,Bengaluru,Karnataka,2025-05
+P293,Tennis Racket 60,982.24,Sports,4.6,2026-05-31,CUST73296,5,Pune,Maharashtra,2026-05
+P294,Self-Help Journal 81,415.07,Books,4.2,2025-06-29,CUST85500,4,Bengaluru,Karnataka,2025-06
+P295,Kids Storybook 81,397.84,Books,3.9,2025-10-22,CUST59523,5,Delhi,Delhi,2025-10
+P296,Bluetooth Speaker 65,101.99,Electronics,4.2,2025-10-09,CUST38992,3,Hyderabad,Telangana,2025-10
+P297,Smartphone X 48,1082.21,Electronics,3.6,2026-04-04,CUST16414,2,Kolkata,West Bengal,2026-04
+P298,VR Headset 77,662.14,Electronics,4.2,2025-08-26,CUST28627,5,Kolkata,West Bengal,2025-08
+P299,Facial Cleanser 58,1182.3,Beauty,4.4,2025-06-03,CUST99953,5,Mumbai,Maharashtra,2025-06
+P300,Slim Fit Jeans 78,621.45,Clothing,3.7,2025-01-12,CUST83961,1,Bengaluru,Karnataka,2025-01

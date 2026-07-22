@@ -1,0 +1,147 @@
+/* ===========================
+   DASHBOARD SUMMARY
+=========================== */
+
+.summary-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    margin:30px 0;
+
+}
+
+.summary-card h2{
+
+    color:#1e293b;
+
+    margin-bottom:25px;
+
+    font-size:24px;
+
+}
+
+/* GRID */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+/* CARD */
+
+.summary-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:22px;
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    transition:.3s;
+
+    border:1px solid #e2e8f0;
+
+}
+
+.summary-item:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+/* ICON */
+
+.summary-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    color:white;
+
+    flex-shrink:0;
+
+}
+
+/* COLORS */
+
+.blue{
+
+    background:#2563eb;
+
+}
+
+.green{
+
+    background:#10b981;
+
+}
+
+.orange{
+
+    background:#f59e0b;
+
+}
+
+.red{
+
+    background:#ef4444;
+
+}
+
+.yellow{
+
+    background:#eab308;
+
+}
+
+/* TEXT */
+
+.summary-item h3{
+
+    font-size:28px;
+
+    color:#0f172a;
+
+    margin-bottom:6px;
+
+    font-weight:700;
+
+}
+
+.summary-item p{
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
