@@ -29,8 +29,9 @@ from routes.product import product
 from flask import send_from_directory
 from inventory_prediction import predict_inventory
 from routes.sales import sales
-
-
+from routes.customer import customer
+from xgboost_prediction import predict_inventory_xgboost
+from routes.dashboard import dashboard
 
 app = Flask(__name__)
 
@@ -39,6 +40,8 @@ app.register_blueprint(auth)
 app.register_blueprint(vendor)
 app.register_blueprint(product)
 app.register_blueprint(sales)
+app.register_blueprint(customer)
+app.register_blueprint(dashboard)
 
 # Enable CORS
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
@@ -169,6 +172,18 @@ def dashboard():
     "accuracy":"91%"
 
 }
+
+    xgb_prediction = predict_inventory_xgboost(df)
+    result["inventory_prediction"] = {
+
+    "random_forest": inventory_prediction,
+
+    "xgboost": xgb_prediction,
+
+    "best_model": "XGBoost" if xgb_prediction > inventory_prediction else "Random Forest"
+
+}
+    
 
     # Category list
     if "category" in df.columns:
