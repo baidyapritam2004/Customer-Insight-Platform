@@ -32,6 +32,9 @@ from routes.sales import sales
 from routes.customer import customer
 from xgboost_prediction import predict_inventory_xgboost
 from routes.dashboard import dashboard
+from routes.settings import settings
+from routes.vendor_dashboard import vendor_dashboard
+from routes.order import order
 
 app = Flask(__name__)
 
@@ -42,6 +45,9 @@ app.register_blueprint(product)
 app.register_blueprint(sales)
 app.register_blueprint(customer)
 app.register_blueprint(dashboard)
+app.register_blueprint(settings)
+app.register_blueprint(vendor_dashboard)
+app.register_blueprint(order)
 
 # Enable CORS
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
