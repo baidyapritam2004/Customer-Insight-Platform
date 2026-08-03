@@ -2,13 +2,23 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
-  CartesianGrid,
+  Cell,
   XAxis,
   YAxis,
   Tooltip,
+  CartesianGrid,
 } from "recharts";
+const colors = [
+  "#f59e0b", // Orange
+  "#ef4444", // Red
+  "#06b6d4", // Cyan
+  "#3b82f6", // Blue
+  "#10b981", // Green
 
-function ProductCategory({ data, onSelectCategory  }) {
+  "#8b5cf6", // Purple
+];
+
+function ProductCategory({ data, onSelectCategory }) {
   if (!data || data.length === 0) {
     return (
       <div className="chart-card">
@@ -20,7 +30,6 @@ function ProductCategory({ data, onSelectCategory  }) {
 
   return (
     <div className="chart-card">
-
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -32,10 +41,16 @@ function ProductCategory({ data, onSelectCategory  }) {
 
           <Bar
     dataKey="sales"
-    onClick={(data) =>
-        onSelectCategory(data.category)
-    }
-/>
+    radius={[8, 8, 0, 0]}
+    onClick={(data) => onSelectCategory(data.category)}
+>
+    {data.map((entry, index) => (
+        <Cell
+            key={`cell-${index}`}
+            fill={colors[index % colors.length]}
+        />
+    ))}
+</Bar>
         </BarChart>
       </ResponsiveContainer>
     </div>

@@ -28,7 +28,7 @@ function Sidebar() {
   return (
     <div className={collapsed ? "sidebar collapsed" : "sidebar"}>
       <div className="sidebar-header">
-        {!collapsed && <h2>Insights AI</h2>}
+        {!collapsed && <h2>InsightSync AI</h2>}
 
         <button className="menu-btn" onClick={() => setCollapsed(!collapsed)}>
           <FaBars />
@@ -37,7 +37,7 @@ function Sidebar() {
 
       <nav>
         <NavLink
-          to="/dashboard"
+          to="/admin/dashboard"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
           }
@@ -47,7 +47,7 @@ function Sidebar() {
         </NavLink>
 
         <NavLink
-          to="/customers"
+          to="/admin/customers"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
           }
@@ -57,7 +57,7 @@ function Sidebar() {
         </NavLink>
 
         <NavLink
-          to="/analytics"
+          to="/admin/analytics"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
           }
@@ -67,7 +67,7 @@ function Sidebar() {
         </NavLink>
 
         <NavLink
-          to="/reports"
+          to="/admin/reports"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
           }
@@ -77,7 +77,7 @@ function Sidebar() {
         </NavLink>
 
         <NavLink
-          to="/upload"
+          to="/admin/upload"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
           }
@@ -86,10 +86,10 @@ function Sidebar() {
           {!collapsed && <span>Upload CSV</span>}
         </NavLink>
 
-        <NavLink to="/analytics"></NavLink>
+        <NavLink to="/admin/analytics"></NavLink>
 
         <NavLink
-          to="/vendors"
+          to="/admin/vendors"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
           }
@@ -99,7 +99,7 @@ function Sidebar() {
         </NavLink>
 
         <NavLink
-    to="/inventory"
+    to="/admin/inventory"
     className={({ isActive }) =>
         isActive ? "menu-item active" : "menu-item"
     }
@@ -108,7 +108,7 @@ function Sidebar() {
     {!collapsed && <span>Inventory</span>}
 </NavLink>
         <NavLink
-          to="/orders"
+          to="/admin/orders"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
           }
@@ -117,7 +117,7 @@ function Sidebar() {
           {!collapsed && <span>Orders</span>}
         </NavLink>
         <NavLink
-          to="/settings"
+          to="/admin/settings"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
           }

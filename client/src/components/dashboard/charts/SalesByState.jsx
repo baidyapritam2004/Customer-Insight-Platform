@@ -2,11 +2,20 @@ import {
     ResponsiveContainer,
     BarChart,
     Bar,
+    Cell,
     XAxis,
     YAxis,
     Tooltip,
     CartesianGrid
 } from "recharts";
+const colors = [
+    "#3b82f6", // Blue
+    "#10b981", // Green
+    "#f59e0b", // Orange
+    "#ef4444", // Red
+    "#8b5cf6", // Purple
+    "#06b6d4", // Cyan
+];
 
 function SalesByState({ data }) {
 
@@ -30,9 +39,14 @@ function SalesByState({ data }) {
 
                     <Tooltip />
 
-                    <Bar
-                        dataKey="sales"
-                    />
+                    <Bar dataKey="sales" radius={[8, 8, 0, 0]}>
+    {data.map((entry, index) => (
+        <Cell
+            key={`cell-${index}`}
+            fill={colors[index % colors.length]}
+        />
+    ))}
+</Bar>
 
                 </BarChart>
 

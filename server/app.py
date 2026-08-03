@@ -255,7 +255,7 @@ def export_pdf():
 
     elements.append(
         Paragraph(
-            "Customer Insight Platform Report",
+            "InsightSync AI Report",
             title_style
         )
     )

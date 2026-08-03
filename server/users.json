@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Pritam Baidya",
+        "email": "abc@gmail.com",
+        "password": "<bcrypt hashed password>",
+        "role": "Vendor"
+    },
+    {
+        "name": "A B",
+        "email": "abd@gmail.com",
+        "password": "$2b$12$GytimnIkENxyl36UGVo.Ke58.MzzIIlsudV90GpCMm4B07oOQk9N2",
+        "role": "Vendor"
+    }
+]

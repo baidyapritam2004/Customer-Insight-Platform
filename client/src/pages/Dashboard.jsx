@@ -112,8 +112,12 @@ function Dashboard() {
     cleaning={dashboard.cleaning_summary}
 
 />
-          <DataCleaningSummary summary={dashboard.cleaning_summary} />
+          
           <DataPreview data={dashboard.preview} />
+           <div className="table-card">
+            <DataQuality summary={dashboard.cleaning_summary} />
+          </div>
+
           <KPISection data={dashboard.kpis} />
 
           <div className="two-column">
@@ -170,10 +174,7 @@ function Dashboard() {
             <CustomerTable data={filteredCustomers} />
           </div>
 
-          <div className="table-card">
-            <DataQuality summary={dashboard.cleaning_summary} />
-          </div>
-
+         
           <div className="table-card">
             <AIInsights data={dashboard.insights || []} />
           </div>

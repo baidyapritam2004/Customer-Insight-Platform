@@ -10,7 +10,14 @@ auth = Blueprint("auth", __name__)
 bcrypt = Bcrypt()
 
 USERS_FILE = "users.json"
+VENDOR_FILE = "vendors.json"
+
 SECRET_KEY = "customer_insight_platform_secret"
+
+
+# =========================
+# Signup
+# =========================
 
 @auth.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -21,8 +28,6 @@ def signup():
         })
 
     data = request.json
-
-    # ...rest of your signup code...
 
     name = data.get("name")
     email = data.get("email")
@@ -74,49 +79,108 @@ def signup():
     })
 
 
+# =========================
+# Login
+# =========================
+
 @auth.route("/login", methods=["GET", "POST"])
 def login():
 
     if request.method == "GET":
+
         return jsonify({
             "message": "Login route is working"
         })
-
-    # Your existing login code below...
 
     data = request.json
 
     email = data.get("email")
     password = data.get("password")
 
+    if not email or not password:
+
+        return jsonify({
+            "message": "Email and password are required."
+        }), 400
+
     if not os.path.exists(USERS_FILE):
+
         return jsonify({
             "message": "No users found."
         }), 404
 
     with open(USERS_FILE, "r") as file:
+
         users = json.load(file)
 
-    user = next((u for u in users if u["email"] == email), None)
+    user = next(
+
+        (
+            u for u in users
+            if u["email"] == email
+        ),
+
+        None
+
+    )
 
     if not user:
+
         return jsonify({
             "message": "Invalid email or password."
         }), 401
 
     if not bcrypt.check_password_hash(user["password"], password):
+
         return jsonify({
             "message": "Invalid email or password."
         }), 401
 
+    # ==========================
+    # Find Vendor ID
+    # ==========================
+
+    vendor_id = None
+
+    if user["role"] == "Vendor":
+
+        if os.path.exists(VENDOR_FILE):
+
+            with open(VENDOR_FILE, "r") as file:
+
+                vendors = json.load(file)
+
+            vendor = next(
+
+                (
+                    v for v in vendors
+                    if v["email"] == email
+                ),
+
+                None
+
+            )
+
+            if vendor:
+
+                vendor_id = vendor["vendor_id"]
+
     token = jwt.encode(
+
         {
+
             "email": user["email"],
+
             "role": user["role"],
+
             "exp": datetime.utcnow() + timedelta(hours=24)
+
         },
+
         SECRET_KEY,
+
         algorithm="HS256"
+
     )
 
     return jsonify({
@@ -128,8 +192,12 @@ def login():
         "user": {
 
             "name": user["name"],
+
             "email": user["email"],
-            "role": user["role"]
+
+            "role": user["role"],
+
+            "vendor_id": vendor_id
 
         }
 

@@ -9,7 +9,7 @@
     min-height:90vh;
 
     background:#f4f7fb;
-
+    padding-left: 260px;
 }
 
 .upload-card{
@@ -199,5 +199,36 @@
     color:#64748b;
 
     font-size:14px;
+
+}
+
+.dashboard-content{
+
+    flex:1;
+    
+
+    background:#f8fafc;
+
+    min-height:100vh;
+
+}
+
+.upload-container{
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+.upload-card{
+
+    width:100%;
+
+    max-width:800px;
 
 }

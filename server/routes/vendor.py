@@ -7,6 +7,9 @@ from flask import Blueprint, request, jsonify
 vendor = Blueprint("vendor", __name__)
 print("Vendor routes loaded")
 VENDOR_FILE = "vendors.json"
+PRODUCT_FILE = "products.json"
+ORDER_FILE = "orders.json"
+
 
 @vendor.route("/vendor/register", methods=["GET", "POST"])
 def register_vendor():
@@ -67,8 +70,6 @@ def register_vendor():
 
 @vendor.route("/vendor/all", methods=["GET"])
 def get_all_vendors():
-    if request.method == "GET":
-        return jsonify({"message": "Vendor route working"})
 
     if not os.path.exists(VENDOR_FILE):
         return jsonify([])
@@ -191,8 +192,7 @@ def delete_vendor(vendor_id):
 
 @vendor.route("/vendor/performance", methods=["GET"])
 def vendor_performance():
-    if request.method =="GET":
-        return jsonify({"message": "Working"})
+
     if not os.path.exists(VENDOR_FILE):
         return jsonify([])
 
@@ -210,48 +210,42 @@ def vendor_performance():
     for vendor in vendors:
 
         vendor_products = [
-
             p for p in products
-
             if p.get("vendor_id") == vendor["vendor_id"]
-
         ]
 
         revenue = sum(
-
-            p["price"] * p["stock"]
-
+            p.get("price", 0) * p.get("stock", 0)
             for p in vendor_products
-
         )
 
         orders = sum(
-
-            p["stock"]
-
+            p.get("stock", 0)
             for p in vendor_products
-
         )
 
         if vendor_products:
-
             average_rating = round(
-
                 sum(
-
                     p.get("rating", 0)
-
                     for p in vendor_products
-
                 ) / len(vendor_products),
-
                 2
-
             )
-
         else:
-
             average_rating = 0
+
+        fulfillment = 95
+        growth = 12
+        refund = 2
+
+        score = (
+            revenue * 0.40 +
+            orders * 0.25 +
+            average_rating * 1000 * 0.20 +
+            fulfillment * 100 +
+            (100 - refund) * 50
+        )
 
         performance.append({
 
@@ -265,41 +259,166 @@ def vendor_performance():
 
             "average_rating": average_rating,
 
-            "fulfillment": 95,
+            "fulfillment": fulfillment,
 
-            "growth": 12,
+            "growth": growth,
 
-            "refund": 2
+            "refund": refund,
+
+            "performance_score": round(score, 2)
 
         })
 
-    for vendor in performance:
-
-        score = (
-
-        vendor["revenue"] * 0.40 +
-
-        vendor["orders"] * 0.25 +
-
-        vendor["average_rating"] * 1000 * 0.20 +
-
-        vendor["fulfillment"] * 100 +
-
-        (100 - vendor["refund"]) * 50
-
-    )
     performance.sort(
-
-    key=lambda x: x["performance_score"],
-
-    reverse=True
-
-)
-
-    vendor["performance_score"] = round(score,2)
+        key=lambda x: x["performance_score"],
+        reverse=True
+    )
 
     for index, vendor in enumerate(performance):
-
         vendor["rank"] = index + 1
 
     return jsonify(performance)
+@vendor.route("/vendor/summary", methods=["GET"])
+def vendor_summary():
+
+    if not os.path.exists(VENDOR_FILE):
+        return jsonify({
+            "total": 0,
+            "active": 0,
+            "pending": 0,
+            "suspended": 0
+        })
+
+    with open(VENDOR_FILE, "r") as file:
+        vendors = json.load(file)
+
+    return jsonify({
+        "total": len(vendors),
+        "active": sum(v["status"] == "Active" for v in vendors),
+        "pending": sum(v["status"] == "Pending" for v in vendors),
+        "suspended": sum(v["status"] == "Suspended" for v in vendors)
+    })
+
+@vendor.route("/vendor/dashboard/<vendor_id>", methods=["GET"])
+def vendor_dashboard(vendor_id):
+
+    if not os.path.exists(VENDOR_FILE):
+        return jsonify({"message": "Vendor not found"}), 404
+
+    vendors = json.load(open(VENDOR_FILE))
+
+    products = []
+    orders = []
+
+    if os.path.exists(PRODUCT_FILE):
+        products = json.load(open(PRODUCT_FILE))
+
+    if os.path.exists(ORDER_FILE):
+        orders = json.load(open(ORDER_FILE))
+
+    vendor = next(
+        (v for v in vendors if v["vendor_id"] == vendor_id),
+        None
+    )
+
+    if vendor is None:
+        return jsonify({"message": "Vendor not found"}), 404
+
+    vendor_products = [
+        p for p in products
+        if p["vendor_id"] == vendor_id
+    ]
+
+    vendor_orders = [
+        o for o in orders
+        if o["vendor_id"] == vendor_id
+    ]
+
+    revenue = sum(
+        order["total"]
+        for order in vendor_orders
+        if order["status"] != "Cancelled"
+    )
+
+    total_orders = len(vendor_orders)
+
+    pending_orders = len([
+        o for o in vendor_orders
+        if o["status"] == "Pending"
+    ])
+
+    delivered_orders = len([
+        o for o in vendor_orders
+        if o["status"] == "Delivered"
+    ])
+
+    cancelled_orders = len([
+        o for o in vendor_orders
+        if o["status"] == "Cancelled"
+    ])
+
+    low_stock_products = [
+        p for p in vendor_products
+        if p["stock"] <= 5
+    ]
+
+    customers = len(
+        set(
+            order["customer_name"]
+            for order in vendor_orders
+        )
+    )
+
+    if vendor_products:
+
+        average_rating = round(
+            sum(
+                p.get("rating", 0)
+                for p in vendor_products
+            ) / len(vendor_products),
+            2
+        )
+
+    else:
+
+        average_rating = 0
+
+    return jsonify({
+
+        "summary":{
+
+            "business_name":vendor["business_name"],
+
+            "owner_name":vendor["owner_name"],
+
+            "revenue":round(revenue,2),
+
+            "orders":total_orders,
+
+            "products":len(vendor_products),
+
+            "customers":customers,
+
+            "rating":average_rating,
+
+            "pending_orders":pending_orders,
+
+            "delivered_orders":delivered_orders,
+
+            "cancelled_orders":cancelled_orders,
+
+            "low_stock":len(low_stock_products)
+
+        },
+
+        "recent_orders":
+
+            sorted(
+                vendor_orders,
+                key=lambda x:x["date"],
+                reverse=True
+            )[:5],
+
+        "low_stock_products":low_stock_products
+
+    })

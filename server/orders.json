@@ -1,6 +1,28 @@
-{
-    "customer_name":"Rahul Sharma",
-    "product_id":"123456",
-    "quantity":3,
-    "payment_method":"UPI"
-}
+[
+    {
+        "order_id": "8d4f6a3b",
+        "customer_name": "AB Das",
+        "vendor_id": "V003",
+        "product_id": "c1a2b3d4",
+        "product_name": "Keyboard",
+        "quantity": 1,
+        "price": 2500,
+        "total": 2500,
+        "payment_method": "Card",
+        "status": "Processing",
+        "date": "21-04-2026"
+    },
+    {
+        "order_id": "8d4f6ab",
+        "customer_name": "AB Das",
+        "vendor_id": "V002",
+        "product_id": "P205",
+        "product_name": "Mouse",
+        "quantity": 1,
+        "price": 250,
+        "total": 250,
+        "payment_method": "Card",
+        "status": "Pending",
+        "date": "22-04-2026"
+    }
+]

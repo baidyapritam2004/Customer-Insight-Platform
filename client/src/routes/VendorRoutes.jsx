@@ -1,63 +1,32 @@
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "../components/ProtectedRoute";
 
-import VendorDashboard from "../pages/VendorDashboard";
-import VendorProducts from "../pages/VendorProducts";
-import VendorInventory from "../pages/VendorInventory";
-import VendorSales from "../pages/VendorSales";
-import VendorProfile from "../pages/VendorProfile";
+import VendorLayout from "../components/vendor/VendorLayout";
+
+import VendorDashboard from "../pages/vendor/VendorDashboard";
+import VendorProducts from "../pages/vendor/VendorProducts";
+import VendorInventory from "../pages/vendor/VendorInventory";
+import VendorSales from "../pages/vendor/VendorSales";
+import VendorProfile from "../pages/vendor/VendorProfile";
 
 function VendorRoutes() {
-    return (
-        <Routes>
-
-            <Route
-                path="/vendor/dashboard"
-                element={
-                    <ProtectedRoute role="Vendor">
-                        <VendorDashboard />
-                    </ProtectedRoute>
-                }
-            />
-
-            <Route
-                path="/vendor/products"
-                element={
-                    <ProtectedRoute role="Vendor">
-                        <VendorProducts />
-                    </ProtectedRoute>
-                }
-            />
-
-            <Route
-                path="/vendor/inventory"
-                element={
-                    <ProtectedRoute role="Vendor">
-                        <VendorInventory />
-                    </ProtectedRoute>
-                }
-            />
-
-            <Route
-                path="/vendor/sales"
-                element={
-                    <ProtectedRoute role="Vendor">
-                        <VendorSales />
-                    </ProtectedRoute>
-                }
-            />
-
-            <Route
-                path="/vendor/profile"
-                element={
-                    <ProtectedRoute role="Vendor">
-                        <VendorProfile />
-                    </ProtectedRoute>
-                }
-            />
-
-        </Routes>
-    );
+  return (
+    <Routes>
+      <Route
+        element={
+          <ProtectedRoute>
+            <VendorLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route path="dashboard" element={<VendorDashboard />} />
+        <Route path="products" element={<VendorProducts />} />
+        <Route path="inventory" element={<VendorInventory />} />
+        <Route path="sales" element={<VendorSales />} />
+        <Route path="profile" element={<VendorProfile />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default VendorRoutes;

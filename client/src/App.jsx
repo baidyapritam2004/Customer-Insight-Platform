@@ -7,22 +7,22 @@ import AdminRoutes from "./routes/AdminRoutes";
 import VendorRoutes from "./routes/VendorRoutes";
 
 function App() {
-    return (
-        <>
-            {/* Public Routes */}
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-            </Routes>
+  return (
+    <Routes>
 
-            {/* Administrator Routes */}
-            <AdminRoutes />
+      {/* Public */}
+      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
 
-            {/* Vendor Routes */}
-            <VendorRoutes />
-        </>
-    );
+      {/* Admin */}
+      <Route path="/admin/*" element={<AdminRoutes />} />
+
+      {/* Vendor */}
+      <Route path="/vendor/*" element={<VendorRoutes />} />
+
+    </Routes>
+  );
 }
 
 export default App;

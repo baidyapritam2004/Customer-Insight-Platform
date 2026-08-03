@@ -93,3 +93,58 @@ def customer_segments():
         })
 
     return jsonify(segments)
+
+@customer.route("/customer/all", methods=["GET"])
+def get_all_customers():
+
+    filepath = os.path.join(UPLOAD_FOLDER, "latest.csv")
+
+    if not os.path.exists(filepath):
+        return jsonify([])
+
+    df = pd.read_csv(filepath)
+
+    customers = (
+        df.groupby("customer_id")
+        .agg({
+            "city": "first",
+            "state": "first",
+            "price": "sum",
+            "quantity": "sum",
+            "product_id": "count"
+        })
+        .reset_index()
+    )
+
+    customers.rename(
+        columns={
+            "price": "total_spent",
+            "product_id": "total_orders",
+            "quantity": "items_purchased"
+        },
+        inplace=True
+    )
+
+    result = []
+
+    for _, row in customers.iterrows():
+
+        result.append({
+
+            "customer_id": row["customer_id"],
+
+            "customer_name": f"Customer {row['customer_id']}",
+
+            "city": row["city"],
+
+            "state": row["state"],
+
+            "total_orders": int(row["total_orders"]),
+
+            "items_purchased": int(row["items_purchased"]),
+
+            "total_spent": round(row["total_spent"], 2)
+
+        })
+
+    return jsonify(result)

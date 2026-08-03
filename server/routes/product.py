@@ -251,45 +251,56 @@ def update_stock(product_id):
 
 @product.route("/inventory/dashboard", methods=["GET"])
 def inventory_dashboard():
-    if request.method == "GET":
-        return jsonify({"message": "Inventory Dashboard API is working"})
+
     if not os.path.exists(PRODUCT_FILE):
-        return jsonify({})
+        return jsonify({
+            "total_products": 0,
+            "total_stock": 0,
+            "low_stock": 0,
+            "out_of_stock": 0,
+            "inventory_value": 0
+        })
 
     with open(PRODUCT_FILE, "r") as file:
         products = json.load(file)
 
     total_products = len(products)
 
-    total_stock = sum(p["stock"] for p in products)
+    total_stock = sum(
+        product.get("stock", 0)
+        for product in products
+    )
 
     low_stock = sum(
-        1 for p in products
-        if p["stock"] < 20
+        1
+        for product in products
+        if 0 < product.get("stock", 0) <= 20
     )
 
     out_of_stock = sum(
-        1 for p in products
-        if p["stock"] == 0
+        1
+        for product in products
+        if product.get("stock", 0) == 0
     )
 
     inventory_value = sum(
-        p["price"] * p["stock"]
-        for p in products
+        product.get("price", 0) * product.get("stock", 0)
+        for product in products
+    )
+
+    healthy_stock = sum(
+        1
+        for product in products
+        if product.get("stock", 0) > 20
     )
 
     return jsonify({
-
         "total_products": total_products,
-
         "total_stock": total_stock,
-
+        "healthy_stock": healthy_stock,
         "low_stock": low_stock,
-
         "out_of_stock": out_of_stock,
-
         "inventory_value": round(inventory_value, 2)
-
     })
 
 @product.route("/inventory/alerts", methods=["GET"])

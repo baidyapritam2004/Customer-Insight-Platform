@@ -1,0 +1,10 @@
+[
+  {
+    "product_id":"P001",
+    "product_name":"Laptop",
+    "category":"Electronics",
+    "price":52000,
+    "stock":35,
+    "vendor_id":"c1a2b3d6"
+  }
+]

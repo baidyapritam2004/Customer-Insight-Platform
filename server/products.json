@@ -1,8 +1,9 @@
 [
   {
-    "product_id": "123456",
+    "product_id": "P001",
     "product_name": "Laptop",
-    "price": 45000,
-    "stock": 15
-  }
+    "vendor_id": "c1a2b3d4",
+    "price": 50000,
+    "stock": 10
+}
 ]

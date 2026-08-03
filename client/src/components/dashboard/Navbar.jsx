@@ -25,7 +25,7 @@ console.log("Notifications:", info?.notifications);
     <header className="navbar">
       <div className="navbar-left">
         <div>
-          <h2>Customer Insight Platform</h2>
+          <h2>InsightSync AI</h2>
 
           <small className="dataset-name">{info?.dataset_name}</small>
         </div>

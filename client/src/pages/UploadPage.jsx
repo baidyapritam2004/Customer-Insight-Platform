@@ -2,260 +2,193 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-import {
-    FaCloudUploadAlt,
-    FaFileCsv,
-    FaCheckCircle
-} from "react-icons/fa";
-
+import { FaCloudUploadAlt, FaFileCsv, FaCheckCircle } from "react-icons/fa";
+import Sidebar from "../components/dashboard/Sidebar";
+import Navbar from "../components/dashboard/Navbar";
 import "../styles/upload.css";
 
 function UploadPage() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const [file, setFile] = useState(null);
+  const [message, setMessage] = useState("");
+  const [uploading, setUploading] = useState(false);
+  const [dragActive, setDragActive] = useState(false);
 
-    const [file, setFile] = useState(null);
-    const [message, setMessage] = useState("");
-    const [uploading, setUploading] = useState(false);
-    const [dragActive, setDragActive] = useState(false);
+  // ==========================
+  // Validate File
+  // ==========================
 
-    // ==========================
-    // Validate File
-    // ==========================
+  const validateFile = (selectedFile) => {
+    if (!selectedFile) return false;
 
-    const validateFile = (selectedFile) => {
+    const allowedTypes = ["text/csv", "application/vnd.ms-excel"];
 
-        if (!selectedFile) return false;
+    if (!allowedTypes.includes(selectedFile.type)) {
+      setMessage("Only CSV files are allowed.");
+      setFile(null);
+      return false;
+    }
 
-        const allowedTypes = [
-            "text/csv",
-            "application/vnd.ms-excel"
-        ];
+    if (selectedFile.size > 10 * 1024 * 1024) {
+      setMessage("File size must be less than 10 MB.");
+      setFile(null);
+      return false;
+    }
 
-        if (!allowedTypes.includes(selectedFile.type)) {
+    setMessage("");
+    setFile(selectedFile);
 
-            setMessage("Only CSV files are allowed.");
-            setFile(null);
-            return false;
+    return true;
+  };
 
-        }
+  // ==========================
+  // Upload File
+  // ==========================
 
-        if (selectedFile.size > 10 * 1024 * 1024) {
+  const handleUpload = async () => {
+    if (!file) {
+      setMessage("Please select a CSV file.");
+      return;
+    }
 
-            setMessage("File size must be less than 10 MB.");
-            setFile(null);
-            return false;
+    const formData = new FormData();
 
-        }
+    formData.append("file", file);
 
-        setMessage("");
-        setFile(selectedFile);
+    try {
+      setUploading(true);
 
-        return true;
+      const response = await axios.post(
+        "http://127.0.0.1:5000/upload",
+        formData,
+      );
 
-    };
+      setMessage(response.data.message);
 
-    // ==========================
-    // Upload File
-    // ==========================
+      setTimeout(() => {
+        navigate("/admin/dashboard");
+      }, 1200);
+    } catch (error) {
+      console.error(error);
 
-    const handleUpload = async () => {
+      setMessage("Upload failed.");
+    } finally {
+      setUploading(false);
+    }
+  };
 
-        if (!file) {
+  // ==========================
+  // Drag & Drop
+  // ==========================
 
-            setMessage("Please select a CSV file.");
-            return;
+  const handleDrop = (e) => {
+    e.preventDefault();
 
-        }
+    setDragActive(false);
 
-        const formData = new FormData();
+    validateFile(e.dataTransfer.files[0]);
+  };
 
-        formData.append("file", file);
+  const handleDragOver = (e) => {
+    e.preventDefault();
 
-        try {
+    setDragActive(true);
+  };
 
-            setUploading(true);
+  const handleDragLeave = () => {
+    setDragActive(false);
+  };
 
-            const response = await axios.post(
-                "http://127.0.0.1:5000/upload",
-                formData
-            );
+  // ==========================
+  // UI
+  // ==========================
 
-            setMessage(response.data.message);
+  return (
+  <div className="dashboard-container">
 
-            setTimeout(() => {
+    <Sidebar />
 
-                navigate("/dashboard");
+    <div className="dashboard-content">
 
-            }, 1200);
+      <Navbar />
 
-        }
+      <div className="upload-container">
 
-        catch (error) {
+        <div className="upload-card">
 
-            console.error(error);
+          <div className="upload-icon">
+            <FaCloudUploadAlt />
+          </div>
 
-            setMessage("Upload failed.");
+          <h2>Upload Customer Dataset</h2>
 
-        }
+          <p>
+            Upload your CSV dataset to generate analytics,
+            predictions and AI insights.
+          </p>
 
-        finally {
+          <label
+            className={dragActive ? "upload-box active" : "upload-box"}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+          >
 
-            setUploading(false);
+            <FaFileCsv className="csv-icon" />
 
-        }
+            {file ? file.name : "Drag & Drop CSV file here"}
 
-    };
+            <span>or click to browse</span>
 
-    // ==========================
-    // Drag & Drop
-    // ==========================
+            <input
+              type="file"
+              accept=".csv"
+              onChange={(e) => validateFile(e.target.files[0])}
+            />
 
-    const handleDrop = (e) => {
+          </label>
 
-        e.preventDefault();
+          {file && (
 
-        setDragActive(false);
+            <div className="file-info">
 
-        validateFile(e.dataTransfer.files[0]);
-
-    };
-
-    const handleDragOver = (e) => {
-
-        e.preventDefault();
-
-        setDragActive(true);
-
-    };
-
-    const handleDragLeave = () => {
-
-        setDragActive(false);
-
-    };
-
-    // ==========================
-    // UI
-    // ==========================
-
-    return (
-
-        <div className="upload-container">
-
-            <div className="upload-card">
-
-                <div className="upload-icon">
-
-                    <FaCloudUploadAlt />
-
-                </div>
-
-                <h2>Upload Customer Dataset</h2>
-
-                <p>
-
-                    Upload your CSV dataset to generate analytics,
-                    predictions and AI insights.
-
-                </p>
-
-                <label
-                    className={dragActive ? "upload-box active" : "upload-box"}
-                    onDragOver={handleDragOver}
-                    onDragLeave={handleDragLeave}
-                    onDrop={handleDrop}
-                >
-
-                    <FaFileCsv className="csv-icon" />
-
-                    {
-
-                        file
-
-                            ?
-
-                            file.name
-
-                            :
-
-                            "Drag & Drop CSV file here"
-
-                    }
-
-                    <span>
-
-                        or click to browse
-
-                    </span>
-
-                    <input
-                        type="file"
-                        accept=".csv"
-                        onChange={(e) => validateFile(e.target.files[0])}
-                    />
-
-                </label>
-
-                {
-
-                    file &&
-
-                    <div className="file-info">
-
-                        <p>
-
-                            <strong>File Size :</strong>{" "}
-
-                            {(file.size / 1024).toFixed(1)} KB
-
-                        </p>
-
-                    </div>
-
-                }
-
-                <button
-                    onClick={handleUpload}
-                    disabled={uploading}
-                >
-
-                    {
-
-                        uploading
-
-                            ?
-
-                            "Uploading..."
-
-                            :
-
-                            "Upload Dataset"
-
-                    }
-
-                </button>
-
-                {
-
-                    message &&
-
-                    <div className="upload-message">
-
-                        <FaCheckCircle />
-
-                        <span>{message}</span>
-
-                    </div>
-
-                }
+              <p>
+                <strong>File Size :</strong>{" "}
+                {(file.size / 1024).toFixed(1)} KB
+              </p>
 
             </div>
 
+          )}
+
+          <button
+            onClick={handleUpload}
+            disabled={uploading}
+          >
+            {uploading ? "Uploading..." : "Upload Dataset"}
+          </button>
+
+          {message && (
+
+            <div className="upload-message">
+
+              <FaCheckCircle />
+
+              <span>{message}</span>
+
+            </div>
+
+          )}
+
         </div>
 
-    );
+      </div>
 
+    </div>
+
+  </div>
+);
 }
 
 export default UploadPage;

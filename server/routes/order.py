@@ -166,3 +166,91 @@ def delete_order(order_id):
         "message":"Order Deleted"
 
     })
+
+@order.route("/order/monthly-revenue", methods=["GET"])
+def monthly_revenue():
+
+    orders = load_json(ORDER_FILE)
+
+    months = {
+        "Jan": 0,
+        "Feb": 0,
+        "Mar": 0,
+        "Apr": 0,
+        "May": 0,
+        "Jun": 0,
+        "Jul": 0,
+        "Aug": 0,
+        "Sep": 0,
+        "Oct": 0,
+        "Nov": 0,
+        "Dec": 0
+    }
+
+    month_names = [
+        "Jan","Feb","Mar","Apr","May","Jun",
+        "Jul","Aug","Sep","Oct","Nov","Dec"
+    ]
+
+    for order in orders:
+
+        try:
+            date = datetime.strptime(order["date"], "%d-%m-%Y")
+
+            month = month_names[date.month - 1]
+
+            months[month] += float(order.get("total", 0))
+
+        except:
+            pass
+
+    chart = []
+
+    for month, revenue in months.items():
+
+        chart.append({
+            "month": month,
+            "revenue": revenue
+        })
+
+    return jsonify(chart)
+
+@order.route("/order/daily-orders", methods=["GET"])
+def daily_orders():
+
+    orders = load_json(ORDER_FILE)
+
+    weekdays = {
+        "Mon": 0,
+        "Tue": 0,
+        "Wed": 0,
+        "Thu": 0,
+        "Fri": 0,
+        "Sat": 0,
+        "Sun": 0
+    }
+
+    day_names = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+
+    for order in orders:
+
+        try:
+            date = datetime.strptime(order["date"], "%d-%m-%Y")
+
+            day = day_names[date.weekday()]
+
+            weekdays[day] += 1
+
+        except:
+            pass
+
+    data = []
+
+    for day, count in weekdays.items():
+
+        data.append({
+            "day": day,
+            "orders": count
+        })
+
+    return jsonify(data)

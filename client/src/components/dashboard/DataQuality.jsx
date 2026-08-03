@@ -24,7 +24,7 @@ function DataQuality({ summary }) {
 
                 <div>
 
-                    <h2>Data Quality Report</h2>
+                    <h2>Data Cleaning Report</h2>
 
                     <p>Automatic quality assessment of the uploaded dataset</p>
 
