@@ -10,7 +10,9 @@ product = Blueprint("product", __name__)
 
 PRODUCT_FILE = "products.json"
 INVENTORY_FILE = "inventory.json"
+IMAGE_FOLDER = "static/product_images"
 
+os.makedirs(IMAGE_FOLDER, exist_ok=True)
 
 @product.route("/product/add", methods=["GET", "POST"])
 def add_product():
@@ -18,9 +20,7 @@ def add_product():
     if request.method == "GET":
         return jsonify({"message": "Product route working"})
 
-    # Existing POST code below
 
-    data = request.json
 
     if os.path.exists(PRODUCT_FILE):
 
@@ -32,26 +32,26 @@ def add_product():
         products = []
 
     new_product = {
+    "product_id": str(uuid.uuid4())[:8],
 
-        "product_id": str(uuid.uuid4())[:8],
+    "product_name": data.get("product_name"),
+    "category": data.get("category"),
+    "brand": data.get("brand"),
+    "description": data.get("description"),
 
-        "product_name": data.get("product_name"),
+    "price": float(data.get("price")),
+    "stock": int(data.get("stock")),
 
-        "category": data.get("category"),
+    "warehouse": data.get("warehouse"),
 
-        "price": float(data.get("price")),
+    "vendor_id": data.get("vendor_id"),
 
-        "stock": int(data.get("stock")),
+    "image": data.get("image", ""),
 
-        "warehouse": data.get("warehouse"),
+    "rating": 0,
 
-        "vendor_id": data.get("vendor_id"),
-
-        "image": "",
-
-        "created_at": data.get("created_at", "")
-
-    }
+    "created_at": datetime.datetime.now().strftime("%d-%m-%Y")
+}
 
     products.append(new_product)
 
@@ -90,11 +90,7 @@ def update_product(product_id):
             "product_id": product_id
         })
 
-    data = request.json
-
-    # existing update code...
-
-    data = request.json
+     
 
     if not os.path.exists(PRODUCT_FILE):
         return jsonify({"message": "No products found"}), 404
@@ -108,11 +104,43 @@ def update_product(product_id):
 
         if product["product_id"] == product_id:
 
-            product["product_name"] = data.get("product_name", product["product_name"])
-            product["category"] = data.get("category", product["category"])
-            product["price"] = data.get("price", product["price"])
-            product["stock"] = data.get("stock", product["stock"])
-            product["warehouse"] = data.get("warehouse", product["warehouse"])
+            product["product_name"] = data.get(
+                "product_name",
+                product["product_name"]
+            )
+
+            product["category"] = data.get(
+                "category",
+                product["category"]
+            )
+
+            product["brand"] = data.get(
+                "brand",
+                product.get("brand")
+            )
+
+            product["description"] = data.get(
+                "description",
+                product.get("description")
+            )
+
+            product["image"] = data.get(
+                "image",
+                product.get("image")
+            )
+
+            product["price"] = float(
+                data.get("price", product["price"])
+            )
+
+            product["stock"] = int(
+                data.get("stock", product["stock"])
+            )
+
+            product["warehouse"] = data.get(
+                "warehouse",
+                product.get("warehouse")
+            )
 
             updated = True
             break
@@ -123,7 +151,9 @@ def update_product(product_id):
     with open(PRODUCT_FILE, "w") as file:
         json.dump(products, file, indent=4)
 
-    return jsonify({"message": "Product updated successfully"})
+    return jsonify({
+        "message": "Product updated successfully"
+    })
 
 @product.route("/product/delete/<product_id>", methods=["GET", "DELETE"])
 def delete_product(product_id):
@@ -134,7 +164,7 @@ def delete_product(product_id):
             "product_id": product_id
         })
 
-    data = request.json
+     
 
     # existing delete code...
 
@@ -144,10 +174,17 @@ def delete_product(product_id):
     with open(PRODUCT_FILE, "r") as file:
         products = json.load(file)
 
+    original = len(products)
+
     products = [
         p for p in products
         if p["product_id"] != product_id
     ]
+
+    if len(products) == original:
+        return jsonify({
+            "message": "Product not found"
+        }),404
 
     with open(PRODUCT_FILE, "w") as file:
         json.dump(products, file, indent=4)
@@ -195,7 +232,7 @@ def update_price(product_id):
     if request.method == "GET":
         return jsonify({"message": "Update Price API is working", "product_id": product_id})
 
-    data = request.json
+     
 
     if not os.path.exists(PRODUCT_FILE):
         return jsonify({"message": "No products found"}), 404
@@ -225,7 +262,7 @@ def update_stock(product_id):
     if request.method == "GET":
         return jsonify({"message": "Update Stock API is working", "product_id": product_id})
 
-    data = request.json
+     
 
     if not os.path.exists(PRODUCT_FILE):
         return jsonify({"message": "No products found"}), 404
@@ -305,8 +342,7 @@ def inventory_dashboard():
 
 @product.route("/inventory/alerts", methods=["GET"])
 def inventory_alerts():
-    if request.method == "GET":
-        return jsonify({"message": "Inventory Alerts API is working"})
+
     if not os.path.exists(PRODUCT_FILE):
         return jsonify([])
 
@@ -353,7 +389,7 @@ def inventory_alerts():
 def stock_in(product_id):
     if request.method == "GET":
         return jsonify({"message": "Stock In API is working", "product_id": product_id})
-    data = request.json
+     
 
     quantity = int(data["quantity"])
 
@@ -388,7 +424,7 @@ def stock_in(product_id):
 
         "quantity": quantity,
 
-        "date": datetime.now().strftime("%d-%m-%Y %H:%M")
+        "date": datetime.datetime.now().strftime("%d-%m-%Y %H:%M")
 
     })
 
@@ -407,7 +443,7 @@ def stock_out(product_id):
     if request.method == "GET":
         return jsonify({"message": "Stock Out API is working", "product_id": product_id})
 
-    data = request.json
+     
 
     quantity = int(data["quantity"])
 
@@ -448,8 +484,7 @@ def stock_out(product_id):
 
         "quantity": quantity,
 
-        "date": datetime.now().strftime("%d-%m-%Y %H:%M")
-
+        "date": datetime.datetime.now().strftime("%d-%m-%Y %H:%M")
     })
 
     with open(INVENTORY_FILE, "w") as file:
@@ -515,3 +550,23 @@ def inventory_turnover():
         })
 
     return jsonify(result)
+@product.route("/vendor/products/<vendor_id>")
+def vendor_products(vendor_id):
+
+    if not os.path.exists(PRODUCT_FILE):
+        return jsonify([])
+
+    with open(PRODUCT_FILE) as file:
+        products = json.load(file)
+
+    vendor_products = [
+
+        p
+
+        for p in products
+
+        if p["vendor_id"] == vendor_id
+
+    ]
+
+    return jsonify(vendor_products)
