@@ -9,7 +9,9 @@ print("Vendor routes loaded")
 VENDOR_FILE = "vendors.json"
 PRODUCT_FILE = "products.json"
 ORDER_FILE = "orders.json"
+IMAGE_FOLDER = "static/product_images"
 
+os.makedirs(IMAGE_FOLDER, exist_ok=True)
 
 @vendor.route("/vendor/register", methods=["GET", "POST"])
 def register_vendor():

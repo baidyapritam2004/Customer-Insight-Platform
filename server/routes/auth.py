@@ -1,6 +1,6 @@
 import json
 import os
-
+import uuid
 from flask import Blueprint, request, jsonify
 from flask_bcrypt import Bcrypt
 import jwt
@@ -35,24 +35,19 @@ def signup():
     role = data.get("role", "Vendor")
 
     if not name or not email or not password:
-
         return jsonify({
             "message": "All fields are required."
         }), 400
 
+    # ---------- USERS ----------
     if os.path.exists(USERS_FILE):
-
         with open(USERS_FILE, "r") as file:
             users = json.load(file)
-
     else:
-
         users = []
 
     for user in users:
-
         if user["email"] == email:
-
             return jsonify({
                 "message": "Email already exists."
             }), 400
@@ -60,24 +55,38 @@ def signup():
     hashed_password = bcrypt.generate_password_hash(password).decode("utf-8")
 
     users.append({
-
         "name": name,
         "email": email,
         "password": hashed_password,
         "role": role
-
     })
 
     with open(USERS_FILE, "w") as file:
-
         json.dump(users, file, indent=4)
 
+    # ---------- VENDORS ----------
+    if role == "Vendor":
+
+        if os.path.exists(VENDOR_FILE):
+            with open(VENDOR_FILE, "r") as file:
+                vendors = json.load(file)
+        else:
+            vendors = []
+
+        vendor_id = str(uuid.uuid4())[:8]
+
+        vendors.append({
+            "vendor_id": vendor_id,
+            "name": name,
+            "email": email
+        })
+
+        with open(VENDOR_FILE, "w") as file:
+            json.dump(vendors, file, indent=4)
+
     return jsonify({
-
         "message": "Account created successfully."
-
     })
-
 
 # =========================
 # Login

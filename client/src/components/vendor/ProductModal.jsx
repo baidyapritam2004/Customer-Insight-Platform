@@ -3,7 +3,7 @@ import {
   FaTimes,
   FaBox,
   FaTag,
-  FaDollarSign,
+  FaRupeeSign,
   FaWarehouse,
   FaImage,
   FaAlignLeft,
@@ -11,12 +11,7 @@ import {
 
 import "../../styles/productModal.css";
 
-function ProductModal({
-  title,
-  product,
-  onClose,
-  onSave,
-}) {
+function ProductModal({ title, product, onClose, onSave }) {
   const [form, setForm] = useState({
     product_name: "",
     category: "",
@@ -27,21 +22,37 @@ function ProductModal({
     warehouse: "",
     image: "",
   });
+const [preview, setPreview] = useState("");
 
   useEffect(() => {
-    if (product) {
-      setForm({
-        product_name: product.product_name || "",
-        category: product.category || "",
-        brand: product.brand || "",
-        description: product.description || "",
-        price: product.price || "",
-        stock: product.stock || "",
-        warehouse: product.warehouse || "",
-        image: product.image || "",
-      });
-    }
-  }, [product]);
+  if (product) {
+    setForm({
+      product_name: product.product_name || "",
+      category: product.category || "",
+      brand: product.brand || "",
+      description: product.description || "",
+      price: product.price || "",
+      stock: product.stock || "",
+      warehouse: product.warehouse || "",
+      image: product.image || "",
+    });
+
+    setPreview("");
+  } else {
+    setForm({
+      product_name: "",
+      category: "",
+      brand: "",
+      description: "",
+      price: "",
+      stock: "",
+      warehouse: "",
+      image: "",
+    });
+
+    setPreview("");
+  }
+}, [product]);
 
   const handleChange = (e) => {
     setForm({
@@ -63,7 +74,6 @@ function ProductModal({
   return (
     <div className="modal-overlay">
       <div className="product-modal">
-
         <div className="modal-header">
           <h2>{title}</h2>
 
@@ -73,7 +83,6 @@ function ProductModal({
         </div>
 
         <form onSubmit={submit}>
-
           <div className="input-group">
             <FaBox />
             <input
@@ -111,7 +120,7 @@ function ProductModal({
 
           <div className="double-input">
             <div className="input-group">
-              <FaDollarSign />
+              <FaRupeeSign />
               <input
                 type="number"
                 name="price"
@@ -147,15 +156,41 @@ function ProductModal({
           </div>
 
           <div className="input-group">
-            <FaImage />
-            <input
-              type="text"
-              name="image"
-              placeholder="Image URL"
-              value={form.image}
-              onChange={handleChange}
-            />
-          </div>
+  <FaImage />
+
+  <input
+    type="file"
+    accept="image/*"
+    onChange={(e) => {
+      const file = e.target.files[0];
+
+      setForm({
+        ...form,
+        image: file,
+      });
+
+      if (file) {
+        setPreview(URL.createObjectURL(file));
+      }
+    }}
+  />
+
+  {product?.image && !(form.image instanceof File) && (
+    <img
+      src={`http://localhost:5000${product.image}`}
+      alt="Product"
+      className="preview-image"
+    />
+  )}
+
+  {preview && (
+    <img
+      src={preview}
+      alt="Preview"
+      className="preview-image"
+    />
+  )}
+</div>
 
           <div className="input-group textarea">
             <FaAlignLeft />
@@ -169,24 +204,15 @@ function ProductModal({
           </div>
 
           <div className="modal-actions">
-            <button
-              type="button"
-              className="cancel-btn"
-              onClick={onClose}
-            >
+            <button type="button" className="cancel-btn" onClick={onClose}>
               Cancel
             </button>
 
-            <button
-              type="submit"
-              className="save-btn"
-            >
+            <button type="submit" className="save-btn">
               Save Product
             </button>
           </div>
-
         </form>
-
       </div>
     </div>
   );

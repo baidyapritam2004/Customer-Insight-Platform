@@ -10,5 +10,47 @@
         "email": "abd@gmail.com",
         "password": "$2b$12$GytimnIkENxyl36UGVo.Ke58.MzzIIlsudV90GpCMm4B07oOQk9N2",
         "role": "Vendor"
+    },
+    {
+        "name": "Ms",
+        "email": "Dhoni@gmail.com",
+        "password": "$2b$12$2ACBEcWcnsnH8Nwu6erxq.sl2xuFLDmzMW1ZwabGKIMJNhVxc.G/O",
+        "role": "Administrator"
+    },
+    {
+        "name": "Guddu",
+        "email": "guddu@gmail.com",
+        "password": "$2b$12$2E6c32BqiHGJmvVAXpULZOyI7zWuri//LS5qyLEbQ2KduswS7sLmi",
+        "role": "Vendor"
+    },
+    {
+        "name": "Pritam Baidya",
+        "email": "baidyapritam2004@gmail.com",
+        "password": "$2b$12$5.f.jpl8leuUMx9R7TK33O6sYCCM7CbNw1vqnB.pfsCMEyZm3mns.",
+        "role": "Administrator"
+    },
+    {
+        "name": "Vendor",
+        "email": "vendor@gmail.com",
+        "password": "$2b$12$R6kyu6I/7xIjTRrFAzu1juwfOhegJiUc/YE/EdHjgMvkA6KMn/ZLm",
+        "role": "Vendor"
+    },
+    {
+        "name": "jn",
+        "email": "h@gmail.com",
+        "password": "$2b$12$1ALsLepkmBeQPaFJsN0uiurJlEuNTi9CGXQ1bIUsaNo2FtzeHIixa",
+        "role": "Vendor"
+    },
+    {
+        "name": "jhu",
+        "email": "g@gmail.com",
+        "password": "$2b$12$Doxv2CC4f6uXLy.9Tlnafu.dvtRcoO7fwoDK751B0QM72zyyRZImK",
+        "role": "Vendor"
+    },
+    {
+        "name": "Vendor",
+        "email": "vendor1@gmail.com",
+        "password": "$2b$12$0dMEtZV8FfmnAvFpKDwtM.hSJMNZH1tzSjJKq9SW0cQEkhkiDqXiG",
+        "role": "Vendor"
     }
 ]

@@ -1,0 +1,22 @@
+.delete-modal{
+    width:420px;
+    background:#fff;
+    border-radius:16px;
+    padding:30px;
+    text-align:center;
+}
+
+.delete-modal h2{
+    margin-bottom:15px;
+}
+
+.delete-modal p{
+    margin-bottom:25px;
+    color:#555;
+}
+
+.delete-actions{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}

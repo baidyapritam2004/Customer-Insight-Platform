@@ -1,38 +1,55 @@
 [
-  {
-    "vendor_id":"c1a2b3d4",
-    "business_name":"ABC Electronics",
-    "owner_name":"Pritam Baidya",
-    "email":"abc@gmail.com",
-    "phone":"9876543210",
-    "gst_number":"19ABCDE1234F1Z5",
-    "address":"Kolkata",
-    "commission":10,
-    "status":"Pending",
-    "verified":false
-  },
-  {
-    "vendor_id":"c1a2b3d5",
-    "business_name":"ABC Electronics",
-    "owner_name":"Pritam Baidya",
-    "email":"abc@gmail.com",
-    "phone":"9876543210",
-    "gst_number":"19ABCDE1234F1Z5",
-    "address":"Kolkata",
-    "commission":10,
-    "status":"Active",
-    "verified":false
-  },
-  {
-    "vendor_id":"c1a2b3d6",
-    "business_name":"ABC Electronics",
-    "owner_name":"A B",
-    "email":"abd@gmail.com",
-    "phone":"9876543210",
-    "gst_number":"19ABCDE1234F1Z5",
-    "address":"Kolkata",
-    "commission":4,
-    "status":"Suspended",
-    "verified":false
-  }
+    {
+        "vendor_id": "c1a2b3d4",
+        "business_name": "ABC Electronics",
+        "owner_name": "Pritam Baidya",
+        "email": "abc@gmail.com",
+        "phone": "9876543210",
+        "gst_number": "19ABCDE1234F1Z5",
+        "address": "Kolkata",
+        "commission": 10,
+        "status": "Pending",
+        "verified": false
+    },
+    {
+        "vendor_id": "c1a2b3d5",
+        "business_name": "ABC Electronics",
+        "owner_name": "Pritam Baidya",
+        "email": "abc@gmail.com",
+        "phone": "9876543210",
+        "gst_number": "19ABCDE1234F1Z5",
+        "address": "Kolkata",
+        "commission": 10,
+        "status": "Active",
+        "verified": false
+    },
+    {
+        "vendor_id": "c1a2b3d6",
+        "business_name": "ABC Electronics",
+        "owner_name": "A B",
+        "email": "abd@gmail.com",
+        "phone": "9876543210",
+        "gst_number": "19ABCDE1234F1Z5",
+        "address": "Kolkata",
+        "commission": 4,
+        "status": "Active",
+        "verified": false
+    },
+    {
+        "vendor_id": "c1a2b3d7",
+        "business_name": "ABC Electronics",
+        "owner_name": "A B",
+        "email": "ad@gmail.com",
+        "phone": "9876543210",
+        "gst_number": "19ABCDE1234F1Z5",
+        "address": "Kolkata",
+        "commission": 4,
+        "status": "Suspended",
+        "verified": false
+    },
+    {
+        "vendor_id": "8625498f",
+        "name": "Vendor",
+        "email": "vendor1@gmail.com"
+    }
 ]

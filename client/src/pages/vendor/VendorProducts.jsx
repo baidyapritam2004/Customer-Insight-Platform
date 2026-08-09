@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import "../../styles/vendorProducts.css";
 import ProductModal from "../../components/vendor/ProductModal";
+import DeleteModal from "../../components/vendor/DeleteModal";
 function VendorProducts() {
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -31,7 +32,7 @@ function VendorProducts() {
   const [showEditModal, setShowEditModal] = useState(false);
 
   const [selectedProduct, setSelectedProduct] = useState(null);
-
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [page, setPage] = useState(1);
 
   const productsPerPage = 8;
@@ -93,13 +94,7 @@ function VendorProducts() {
     out: products.filter((p) => p.stock === 0).length,
   };
 
-  if (loading) {
-    return (
-      <div className="page-loading">
-        <h2>Loading Products...</h2>
-      </div>
-    );
-  }
+  
 
   return (
     <div className="vendor-product-page">
@@ -231,7 +226,7 @@ function VendorProducts() {
                       <img
                         src={
                           product.image
-                            ? `http://localhost:5000/uploads/${product.image}`
+                            ? `http://localhost:5000/${product.image}`
                             : "https://placehold.co/60x60"
                         }
                         alt={product.product_name}
@@ -285,6 +280,7 @@ function VendorProducts() {
                           className="delete-btn"
                           onClick={() => {
                             setSelectedProduct(product);
+                            setShowDeleteModal(true);
                           }}
                         >
                           Delete
@@ -347,13 +343,37 @@ function VendorProducts() {
           onClose={() => setShowAddModal(false)}
           onSave={async (product) => {
             try {
-              await axios.post("http://localhost:5000/product/add", {
-                ...product,
-                vendor_id: vendorId,
-              });
+              const { image, ...productData } = product;
+
+              // Add product first
+              const res = await axios.post(
+                "http://localhost:5000/product/add",
+                {
+                  ...productData,
+                  vendor_id: vendorId,
+                },
+              );
+
+              // Get the newly created product ID
+              const productId = res.data.product.product_id;
+
+              // Upload image if selected
+              if (image instanceof File) {
+                const formData = new FormData();
+                formData.append("image", image);
+
+                await axios.post(
+                  `http://localhost:5000/product/upload-image/${productId}`,
+                  formData,
+                  {
+                    headers: {
+                      "Content-Type": "multipart/form-data",
+                    },
+                  },
+                );
+              }
 
               setShowAddModal(false);
-
               fetchProducts();
             } catch (err) {
               console.log(err);
@@ -365,18 +385,61 @@ function VendorProducts() {
       {/* ================= Edit Product Modal ================= */}
 
       {showEditModal && (
-        <ProductModal
-          title="Edit Product"
+  <ProductModal
+    title="Edit Product"
+    product={selectedProduct}
+    onClose={() => setShowEditModal(false)}
+    onSave={async (product) => {
+      try {
+
+        const { image, ...productData } = product;
+
+        // Update product details
+        await axios.put(
+          `http://localhost:5000/product/update/${selectedProduct.product_id}`,
+          productData
+        );
+
+        // Upload image if a new one was selected
+        if (image instanceof File) {
+
+          const formData = new FormData();
+
+          formData.append("image", image);
+
+          await axios.post(
+            `http://localhost:5000/product/upload-image/${selectedProduct.product_id}`,
+            formData,
+            {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            }
+          );
+        }
+
+        setShowEditModal(false);
+
+        fetchProducts();
+
+      } catch (err) {
+        console.log(err);
+      }
+    }}
+  />
+)}
+      {showDeleteModal && (
+        <DeleteModal
           product={selectedProduct}
-          onClose={() => setShowEditModal(false)}
-          onSave={async (product) => {
+          onClose={() => setShowDeleteModal(false)}
+          onDelete={async () => {
             try {
-              await axios.put(
-                `http://localhost:5000/product/update/${selectedProduct.product_id}`,
-                product,
+              await axios.delete(
+                `http://localhost:5000/product/delete/${selectedProduct.product_id}`,
               );
 
-              setShowEditModal(false);
+              setShowDeleteModal(false);
+
               fetchProducts();
             } catch (err) {
               console.log(err);

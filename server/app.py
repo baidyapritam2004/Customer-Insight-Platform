@@ -48,6 +48,7 @@ app.register_blueprint(dashboard)
 app.register_blueprint(settings)
 app.register_blueprint(vendor_dashboard)
 app.register_blueprint(order)
+app.config["UPLOAD_FOLDER"] = "static/product_images"
 
 # Enable CORS
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})

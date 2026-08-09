@@ -20,7 +20,7 @@ def add_product():
     if request.method == "GET":
         return jsonify({"message": "Product route working"})
 
-
+    data = request.json
 
     if os.path.exists(PRODUCT_FILE):
 
@@ -46,7 +46,7 @@ def add_product():
 
     "vendor_id": data.get("vendor_id"),
 
-    "image": data.get("image", ""),
+    "image": "",
 
     "rating": 0,
 
@@ -90,7 +90,7 @@ def update_product(product_id):
             "product_id": product_id
         })
 
-     
+    data = request.json
 
     if not os.path.exists(PRODUCT_FILE):
         return jsonify({"message": "No products found"}), 404
@@ -124,10 +124,7 @@ def update_product(product_id):
                 product.get("description")
             )
 
-            product["image"] = data.get(
-                "image",
-                product.get("image")
-            )
+           
 
             product["price"] = float(
                 data.get("price", product["price"])
@@ -193,38 +190,38 @@ def delete_product(product_id):
         "message": "Product deleted successfully"
     })
 
-@product.route("/product/upload-image/<product_id>", methods=["GET", "POST"])
+@product.route("/product/upload-image/<product_id>", methods=["POST"])
 def upload_product_image(product_id):
-
-    if request.method == "GET":
-        return jsonify({"message": "Upload Product Image API is working", "product_id": product_id})
 
     if "image" not in request.files:
         return jsonify({"message": "No image uploaded"}), 400
 
     image = request.files["image"]
 
-    filename = secure_filename(image.filename)
+    if image.filename == "":
+        return jsonify({"message": "No file selected"}), 400
+
+    filename = f"{product_id}_{secure_filename(image.filename)}"
 
     image.save(os.path.join(IMAGE_FOLDER, filename))
+
+    if not os.path.exists(PRODUCT_FILE):
+        return jsonify({"message": "Products not found"}), 404
 
     with open(PRODUCT_FILE, "r") as file:
         products = json.load(file)
 
     for product in products:
-
         if product["product_id"] == product_id:
-
-            product["image"] = filename
-
+            product["image"] = f"/static/product_images/{filename}"
             break
 
     with open(PRODUCT_FILE, "w") as file:
         json.dump(products, file, indent=4)
 
     return jsonify({
-        "message": "Image uploaded successfully.",
-        "filename": filename
+        "message": "Image uploaded successfully",
+        "image": f"/static/product_images/{filename}"
     })
 
 @product.route("/product/update-price/<product_id>", methods=["GET", "PUT"])
@@ -233,7 +230,7 @@ def update_price(product_id):
         return jsonify({"message": "Update Price API is working", "product_id": product_id})
 
      
-
+    data = request.json
     if not os.path.exists(PRODUCT_FILE):
         return jsonify({"message": "No products found"}), 404
 
@@ -261,8 +258,7 @@ def update_stock(product_id):
 
     if request.method == "GET":
         return jsonify({"message": "Update Stock API is working", "product_id": product_id})
-
-     
+    data = request.json
 
     if not os.path.exists(PRODUCT_FILE):
         return jsonify({"message": "No products found"}), 404
@@ -285,9 +281,8 @@ def update_stock(product_id):
             })
 
     return jsonify({"message": "Product not found"}), 404
-
-@product.route("/inventory/dashboard", methods=["GET"])
-def inventory_dashboard():
+@product.route("/inventory/dashboard/<vendor_id>", methods=["GET"])
+def inventory_dashboard(vendor_id):
 
     if not os.path.exists(PRODUCT_FILE):
         return jsonify({
@@ -300,7 +295,11 @@ def inventory_dashboard():
 
     with open(PRODUCT_FILE, "r") as file:
         products = json.load(file)
-
+    products = [
+        product
+        for product in products
+        if product.get("vendor_id") == vendor_id
+    ]
     total_products = len(products)
 
     total_stock = sum(
@@ -389,8 +388,7 @@ def inventory_alerts():
 def stock_in(product_id):
     if request.method == "GET":
         return jsonify({"message": "Stock In API is working", "product_id": product_id})
-     
-
+    data = request.json
     quantity = int(data["quantity"])
 
     with open(PRODUCT_FILE, "r") as file:
@@ -443,7 +441,7 @@ def stock_out(product_id):
     if request.method == "GET":
         return jsonify({"message": "Stock Out API is working", "product_id": product_id})
 
-     
+    data = request.json
 
     quantity = int(data["quantity"])
 
