@@ -5,7 +5,7 @@ import {
   FaHashtag,
 } from "react-icons/fa";
 
-import "../../styles/inventoryModal.css";
+import "../../styles/stockInModal.css";
 
 function StockInModal({
   product,

@@ -1,0 +1,276 @@
+/* ===========================
+   Stock Out Modal
+=========================== */
+
+.inventory-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(17, 24, 39, 0.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+
+  padding: 20px;
+}
+
+/* ===========================
+   Modal
+=========================== */
+
+.inventory-modal {
+  width: 100%;
+  max-width: 450px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.modal-header h2 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.modal-header button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #6b7280;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: 0.3s;
+}
+
+.modal-header button:hover:not(:disabled) {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.modal-header button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   Product Information
+=========================== */
+
+.inventory-product-info {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  background: #fff7ed;
+
+  border-radius: 12px;
+
+  padding: 15px;
+
+  margin-bottom: 20px;
+}
+
+.inventory-product-info > svg {
+  font-size: 28px;
+
+  color: #ef4444;
+}
+
+.inventory-product-info div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.inventory-product-info strong {
+  color: #111827;
+
+  font-size: 15px;
+}
+
+.inventory-product-info small {
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+/* ===========================
+   Input
+=========================== */
+
+.input-group {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 10px;
+
+  padding: 12px 15px;
+
+  margin-bottom: 15px;
+
+  transition: 0.3s;
+}
+
+.input-group:focus-within {
+  border-color: #ef4444;
+
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.input-group > svg {
+  color: #ef4444;
+
+  flex-shrink: 0;
+}
+
+.input-group input {
+  border: none;
+
+  outline: none;
+
+  width: 100%;
+
+  font-size: 15px;
+
+  color: #111827;
+
+  background: transparent;
+}
+
+/* ===========================
+   Message
+=========================== */
+
+.inventory-modal-message {
+  margin: 5px 0 15px;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+/* ===========================
+   Actions
+=========================== */
+
+.modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.cancel-btn,
+.save-btn {
+  border: none;
+
+  padding: 11px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.cancel-btn {
+  background: #e5e7eb;
+
+  color: #374151;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #d1d5db;
+}
+
+.save-btn {
+  background: #ef4444;
+
+  color: white;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.cancel-btn:disabled,
+.save-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 500px) {
+  .inventory-modal {
+    padding: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-btn,
+  .save-btn {
+    width: 100%;
+  }
+}

@@ -76,10 +76,10 @@
         "brand": "SS",
         "description": "ok",
         "price": 10000.0,
-        "stock": 10,
+        "stock": 117,
         "warehouse": "Delhi",
         "vendor_id": "8625498f",
-        "image": "/static/product_images/cedaf530_selfie.jpg",
+        "image": "/static/product_images/cedaf530_car.png.png",
         "rating": 0,
         "created_at": "07-08-2026"
     }

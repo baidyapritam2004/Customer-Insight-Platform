@@ -1,0 +1,176 @@
+/* ===========================
+   Stock In Modal
+=========================== */
+
+.stock-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(17, 24, 39, 0.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+
+  padding: 20px;
+}
+
+/* ===========================
+   Modal
+=========================== */
+
+.stock-modal {
+  width: 100%;
+  max-width: 450px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.stock-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.stock-modal-header h2 {
+  margin: 0;
+
+  font-size: 23px;
+  color: #111827;
+}
+
+.stock-modal-close {
+  border: none;
+  background: transparent;
+
+  font-size: 20px;
+
+  color: #6b7280;
+
+  cursor: pointer;
+}
+
+.stock-modal-close:hover {
+  color: #ef4444;
+}
+
+/* ===========================
+   Product Information
+=========================== */
+
+.stock-product-info {
+  background: #f4f7fb;
+
+  border-radius: 12px;
+
+  padding: 15px;
+
+  margin-bottom: 20px;
+}
+
+.stock-product-info strong {
+  display: block;
+
+  color: #111827;
+
+  margin-bottom: 5px;
+}
+
+.stock-product-info span {
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+/* ===========================
+   Input
+=========================== */
+
+.stock-input-group {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 10px;
+
+  padding: 12px 15px;
+
+  margin-bottom: 20px;
+}
+
+.stock-input-group svg {
+  color: #16a34a;
+}
+
+.stock-input-group input {
+  border: none;
+  outline: none;
+
+  width: 100%;
+
+  font-size: 15px;
+}
+
+/* ===========================
+   Actions
+=========================== */
+
+.stock-modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.stock-cancel-btn,
+.stock-submit-btn {
+  border: none;
+
+  padding: 11px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.stock-cancel-btn {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.stock-cancel-btn:hover {
+  background: #d1d5db;
+}
+
+.stock-submit-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.stock-submit-btn:hover {
+  background: #15803d;
+}

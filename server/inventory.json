@@ -1,10 +1,52 @@
 [
-  {
-    "product_id":"P001",
-    "product_name":"Laptop",
-    "category":"Electronics",
-    "price":52000,
-    "stock":35,
-    "vendor_id":"c1a2b3d6"
-  }
+    {
+        "product_id": "P001",
+        "product_name": "Laptop",
+        "category": "Electronics",
+        "price": 52000,
+        "stock": 35,
+        "vendor_id": "c1a2b3d6"
+    },
+    {
+        "product_id": "cedaf530",
+        "type": "Stock In",
+        "quantity": 2,
+        "date": "10-08-2026 12:56"
+    },
+    {
+        "product_id": "cedaf530",
+        "type": "Stock Out",
+        "quantity": 1,
+        "date": "10-08-2026 12:56"
+    },
+    {
+        "product_id": "cedaf530",
+        "type": "Stock In",
+        "quantity": 5,
+        "date": "10-08-2026 15:48"
+    },
+    {
+        "product_id": "cedaf530",
+        "type": "Stock In",
+        "quantity": 100,
+        "date": "10-08-2026 15:49"
+    },
+    {
+        "product_id": "cedaf530",
+        "type": "Stock In",
+        "quantity": 1,
+        "date": "10-08-2026 15:51"
+    },
+    {
+        "product_id": "cedaf530",
+        "type": "Stock In",
+        "quantity": 10,
+        "date": "10-08-2026 16:10"
+    },
+    {
+        "product_id": "cedaf530",
+        "type": "Stock Out",
+        "quantity": 10,
+        "date": "10-08-2026 16:11"
+    }
 ]
