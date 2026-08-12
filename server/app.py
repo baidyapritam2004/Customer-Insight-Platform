@@ -74,7 +74,7 @@ app.config["UPLOAD_FOLDER"] = PRODUCT_IMAGE_FOLDER
 # Enable CORS
 CORS(app, origins=[
         "http://localhost:5173",
-        "https://insightsync-ai-frontend.onrender.com/"
+        "https://insightsync-ai-frontend.onrender.com"
     ])
 
 
