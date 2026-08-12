@@ -58,9 +58,7 @@ function Dashboard() {
       .catch((err) => console.error(err));
   }, [selectedCategory]);
 
-  if (!dashboard) {
-    return <h2>Loading Dashboard...</h2>;
-  }
+  
 
   const customers = dashboard.customers || [];
 
