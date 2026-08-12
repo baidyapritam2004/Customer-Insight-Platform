@@ -1,4 +1,4 @@
-import "../../styles/aiinsights.css";
+import "../../styles/aiInsights.css";
 import { FaLightbulb } from "react-icons/fa";
 
 function AIInsights({ data }) {
