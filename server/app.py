@@ -72,7 +72,10 @@ app.register_blueprint(order)
 app.config["UPLOAD_FOLDER"] = PRODUCT_IMAGE_FOLDER
 
 # Enable CORS
-CORS(app)
+CORS(app, origins=[
+        "http://localhost:5173",
+        "https://insightsync-ai-frontend.onrender.com/"
+    ])
 
 
 
