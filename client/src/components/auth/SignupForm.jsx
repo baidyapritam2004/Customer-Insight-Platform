@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
 import "../../styles/auth.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function SignupForm() {
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ function SignupForm() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://127.0.0.1:5000/signup", form);
+      const res = await axios.post(`${API_URL}/signup`, form);
 
       setMessage(res.data.message);
 

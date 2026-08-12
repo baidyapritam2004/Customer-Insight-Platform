@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaUser, FaLock } from "react-icons/fa";
 
 import "../../styles/auth.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function LoginForm() {
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ function LoginForm() {
 
     try {
       const res = await axios.post(
-        "http://127.0.0.1:5000/login",
+        `${API_URL}/login`,
         form
       );
 
