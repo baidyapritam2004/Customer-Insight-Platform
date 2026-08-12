@@ -6,7 +6,7 @@ import {
 } from "react-icons/fa";
 
 import "../../styles/stockInModal.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function StockInModal({
   product,
   onClose,
@@ -31,7 +31,7 @@ function StockInModal({
       setMessage("");
 
       const response = await fetch(
-        `http://localhost:5000/inventory/stock-in/${product.product_id}`,
+        `${API_URL}/inventory/stock-in/${product.product_id}`,
         {
           method: "PUT",
           headers: {

@@ -8,6 +8,7 @@ import Navbar from "../components/dashboard/Navbar";
 import CustomerGrowth from "../components/dashboard/charts/CustomerGrowth";
 import CustomerSegment from "../components/dashboard/charts/CustomerSegment";
 import ChartCard from "../components/dashboard/ChartCard";
+const API_URL = import.meta.env.VITE_API_URL;
 function Customers() {
   const [summary, setSummary] = useState({});
   const [customers, setCustomers] = useState([]);
@@ -25,7 +26,7 @@ const [dashboard, setDashboard] = useState(null);
 }, []);
 const loadDashboard = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/dashboard");
+    const res = await axios.get(`${API_URL}/dashboard`);
     setDashboard(res.data);
   } catch (err) {
     console.log(err);
@@ -33,7 +34,7 @@ const loadDashboard = async () => {
 };
   const loadSummary = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/customer/summary");
+      const res = await axios.get(`${API_URL}/customer/summary`);
       setSummary(res.data);
     } catch (err) {
       console.log(err);
@@ -42,7 +43,7 @@ const loadDashboard = async () => {
 
   const loadCustomers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/customer/all");
+      const res = await axios.get(`${API_URL}/customer/all`);
       setCustomers(res.data);
     } catch (err) {
       console.log(err);

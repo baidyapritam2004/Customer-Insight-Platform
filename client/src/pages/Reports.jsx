@@ -4,7 +4,7 @@ import Sidebar from "../components/dashboard/Sidebar";
 import Navbar from "../components/dashboard/Navbar";
 
 import "../styles/reports.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function Reports() {
 
   const [generating, setGenerating] = useState(false);
@@ -27,15 +27,15 @@ function Reports() {
   };
 
   const downloadPDF = () => {
-    window.open("http://localhost:5000/export/pdf", "_blank");
+    window.open(`${API_URL}/export/pdf`, "_blank");
   };
 
   const downloadCSV = () => {
-    window.open("http://localhost:5000/export/csv", "_blank");
+    window.open(`${API_URL}/export/csv`, "_blank");
   };
 
   const downloadExcel = () => {
-    window.open("http://localhost:5000/export/excel", "_blank");
+    window.open(`${API_URL}/export/excel`, "_blank");
   };
 
   const reports = [

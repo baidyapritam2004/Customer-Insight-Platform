@@ -5,7 +5,7 @@ import Sidebar from "../components/dashboard/Sidebar";
 import Navbar from "../components/dashboard/Navbar";
 
 import "../styles/vendors.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function Vendors() {
   const [vendors, setVendors] = useState([]);
 
@@ -24,12 +24,12 @@ function Vendors() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/vendor/performance")
+      .get(`${API_URL}/vendor/performance`)
       .then((res) => setPerformance(res.data));
   }, []);
   const loadVendors = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/vendor/all");
+      const res = await axios.get(`${API_URL}/vendor/all`);
 
       setVendors(res.data);
     } catch (err) {

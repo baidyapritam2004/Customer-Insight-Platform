@@ -12,6 +12,7 @@ import {
 import "../../styles/vendorProducts.css";
 import ProductModal from "../../components/vendor/ProductModal";
 import DeleteModal from "../../components/vendor/DeleteModal";
+const API_URL = import.meta.env.VITE_API_URL;
 function VendorProducts() {
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -35,13 +36,13 @@ function VendorProducts() {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [page, setPage] = useState(1);
 
-  const productsPerPage = 8;
+  const productsPerPage = 10;
 
   const fetchProducts = () => {
     if (!vendorId) return;
 
     axios
-      .get(`http://localhost:5000/vendor/products/${vendorId}`)
+      .get(`${API_URL}/vendor/products/${vendorId}`)
       .then((res) => {
         setProducts(res.data);
       })
@@ -226,7 +227,7 @@ function VendorProducts() {
                       <img
                         src={
                           product.image
-                            ? `http://localhost:5000/${product.image}`
+                            ? `${API_URL}/${product.image}`
                             : "https://placehold.co/60x60"
                         }
                         alt={product.product_name}
@@ -347,7 +348,7 @@ function VendorProducts() {
 
               // Add product first
               const res = await axios.post(
-                "http://localhost:5000/product/add",
+                `${API_URL}/product/add`,
                 {
                   ...productData,
                   vendor_id: vendorId,
@@ -363,7 +364,7 @@ function VendorProducts() {
                 formData.append("image", image);
 
                 await axios.post(
-                  `http://localhost:5000/product/upload-image/${productId}`,
+                  `${API_URL}/product/upload-image/${productId}`,
                   formData,
                   {
                     headers: {
@@ -396,7 +397,7 @@ function VendorProducts() {
 
         // Update product details
         await axios.put(
-          `http://localhost:5000/product/update/${selectedProduct.product_id}`,
+          `${API_URL}/product/update/${selectedProduct.product_id}`,
           productData
         );
 
@@ -408,7 +409,7 @@ function VendorProducts() {
           formData.append("image", image);
 
           await axios.post(
-            `http://localhost:5000/product/upload-image/${selectedProduct.product_id}`,
+            `${API_URL}/product/upload-image/${selectedProduct.product_id}`,
             formData,
             {
               headers: {
@@ -435,7 +436,7 @@ function VendorProducts() {
           onDelete={async () => {
             try {
               await axios.delete(
-                `http://localhost:5000/product/delete/${selectedProduct.product_id}`,
+                `${API_URL}/product/delete/${selectedProduct.product_id}`,
               );
 
               setShowDeleteModal(false);

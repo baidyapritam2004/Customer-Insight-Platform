@@ -28,7 +28,7 @@ import {
   Bar,
 } from "recharts";
 import "../styles/orders.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function Orders() {
 
   const [orders, setOrders] = useState([]);
@@ -48,7 +48,7 @@ function Orders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/order/all");
+      const res = await axios.get(`${API_URL}/order/all`);
 
       if (Array.isArray(res.data))
         setOrders(res.data);
@@ -64,7 +64,7 @@ function Orders() {
 
     try {
 
-      const res = await axios.get("http://localhost:5000/vendor/all");
+      const res = await axios.get(`${API_URL}/vendor/all`);
 
       if (Array.isArray(res.data))
         setVendors(res.data);
@@ -91,7 +91,7 @@ function Orders() {
     try {
 
       await axios.put(
-        `http://localhost:5000/order/status/${orderId}`,
+        `${API_URL}/order/status/${orderId}`,
         {
           status,
         }
@@ -111,7 +111,7 @@ function Orders() {
     try {
 
       await axios.delete(
-        `http://localhost:5000/order/delete/${orderId}`
+        `${API_URL}/order/delete/${orderId}`
       );
 
       fetchOrders();
@@ -233,14 +233,14 @@ const [revenueChart, setRevenueChart] = useState([]);
 
 useEffect(() => {
     axios
-        .get("http://localhost:5000/order/monthly-revenue")
+        .get(`${API_URL}/order/monthly-revenue`)
         .then(res => setRevenueChart(res.data));
 }, []);
 const [dailyOrders, setDailyOrders] = useState([]);
 
 useEffect(() => {
     axios
-        .get("http://localhost:5000/order/daily-orders")
+        .get(`${API_URL}/order/daily-orders`)
         .then(res => setDailyOrders(res.data));
 }, []);
   return (

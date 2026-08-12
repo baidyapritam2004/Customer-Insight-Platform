@@ -1,6 +1,11 @@
-from unittest import result
+from flask import (
+    Flask,
+    request,
+    jsonify,
+    send_file,
+    send_from_directory
+)
 
-from flask import Flask, request, jsonify, send_file
 from io import BytesIO
 from flask_cors import CORS
 import pandas as pd
@@ -38,6 +43,22 @@ from routes.order import order
 
 app = Flask(__name__)
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+PRODUCT_IMAGE_FOLDER = os.path.join(
+    BASE_DIR,
+    "static",
+    "product_images"
+)
+
+UPLOAD_FOLDER = os.path.join(
+    BASE_DIR,
+    "uploads"
+)
+
+os.makedirs(PRODUCT_IMAGE_FOLDER, exist_ok=True)
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
 bcrypt = Bcrypt(app)
 app.register_blueprint(auth)
 app.register_blueprint(vendor)
@@ -48,13 +69,12 @@ app.register_blueprint(dashboard)
 app.register_blueprint(settings)
 app.register_blueprint(vendor_dashboard)
 app.register_blueprint(order)
-app.config["UPLOAD_FOLDER"] = "static/product_images"
+app.config["UPLOAD_FOLDER"] = PRODUCT_IMAGE_FOLDER
 
 # Enable CORS
-CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+CORS(app)
 
-UPLOAD_FOLDER = "uploads"
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
 
 dashboard_data = {}
 
@@ -453,12 +473,17 @@ def export_excel():
 
 @app.route("/product-images/<filename>")
 def product_images(filename):
-
-    return f"Requested file: {filename}"
+    return send_from_directory(
+        app.config["UPLOAD_FOLDER"],
+        filename
+    )
 
 # ==========================
 # Run Server
 # ==========================
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000))
+    )

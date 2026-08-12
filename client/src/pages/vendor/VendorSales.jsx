@@ -14,7 +14,7 @@ import {
 
 import SalesModal from "../../components/sales/SalesModal";
 import DeleteSaleModal from "../../components/sales/DeleteSaleModal";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function VendorSales() {
   const vendorId = localStorage.getItem("vendor_id");
 
@@ -45,7 +45,7 @@ function VendorSales() {
  const fetchProducts = async () => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/vendor/products/${vendorId}`
+      `${API_URL}/vendor/products/${vendorId}`
     );
 
     console.log("Products API:", res.data);
@@ -60,7 +60,7 @@ function VendorSales() {
 
   try {
     const res = await axios.get(
-      `http://localhost:5000/sales/dashboard/${vendorId}`
+      `${API_URL}/sales/dashboard/${vendorId}`
     );
 
     setDashboard(res.data);
@@ -72,7 +72,7 @@ function VendorSales() {
     if (!vendorId) return;
 
     axios
-      .get(`http://localhost:5000/sales/vendor/${vendorId}`)
+      .get(`${API_URL}/sales/vendor/${vendorId}`)
       .then((res) => {
         setSales(res.data);
       })
@@ -308,7 +308,7 @@ function VendorSales() {
           onClose={() => setShowAddModal(false)}
           onSave={async (sale) => {
             try {
-              await axios.post("http://localhost:5000/sales/add", {
+              await axios.post(`${API_URL}/sales/add`, {
                 ...sale,
                 vendor_id: vendorId,
               });
@@ -333,7 +333,7 @@ function VendorSales() {
           onSave={async (sale) => {
             try {
               await axios.put(
-                `http://localhost:5000/sales/update/${selectedSale.order_id}`,
+                `${API_URL}/sales/update/${selectedSale.order_id}`,
                 sale,
               );
 
@@ -356,7 +356,7 @@ function VendorSales() {
           onDelete={async () => {
             try {
               await axios.delete(
-                `http://localhost:5000/sales/delete/${selectedSale.order_id}`,
+                `${API_URL}/sales/delete/${selectedSale.order_id}`,
               );
 
               setShowDeleteModal(false);

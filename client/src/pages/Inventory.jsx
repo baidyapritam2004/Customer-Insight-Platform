@@ -28,7 +28,7 @@ import {
 } from "recharts";
 import "../styles/inventory.css";
 import "../styles/charts.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function Inventory() {
   const [products, setProducts] = useState([]);
 
@@ -52,7 +52,7 @@ function Inventory() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/product/all");
+      const res = await axios.get(`${API_URL}/product/all`);
 
       if (Array.isArray(res.data)) {
         setProducts(res.data);
@@ -66,7 +66,7 @@ function Inventory() {
   };
   const fetchVendors = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/vendor/all");
+      const res = await axios.get(`${API_URL}/vendor/all`);
 
       if (Array.isArray(res.data)) {
         setVendors(res.data);

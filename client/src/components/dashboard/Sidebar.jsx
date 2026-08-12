@@ -56,7 +56,7 @@ function Sidebar() {
           {!collapsed && <span>Customers</span>}
         </NavLink>
 
-        <NavLink
+        {/* <NavLink
           to="/admin/analytics"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
@@ -64,7 +64,7 @@ function Sidebar() {
         >
           <FaChartPie />
           {!collapsed && <span>Analytics</span>}
-        </NavLink>
+        </NavLink> */}
 
         <NavLink
           to="/admin/reports"
@@ -116,7 +116,7 @@ function Sidebar() {
           <FaShoppingCart />
           {!collapsed && <span>Orders</span>}
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/admin/settings"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
@@ -124,7 +124,7 @@ function Sidebar() {
         >
           <FaCog />
           {!collapsed && <span>Settings</span>}
-        </NavLink>
+        </NavLink> */}
       </nav>
 
       <div className="logout">

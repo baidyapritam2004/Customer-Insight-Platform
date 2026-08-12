@@ -78,7 +78,7 @@ function VendorSidebar() {
           {!collapsed && <span>Sales</span>}
         </NavLink>
 
-        <NavLink
+        {/* <NavLink
           to="/vendor/profile"
           className={({ isActive }) =>
             isActive ? "menu-item active" : "menu-item"
@@ -86,7 +86,7 @@ function VendorSidebar() {
         >
           <FaUserCircle />
           {!collapsed && <span>Profile</span>}
-        </NavLink>
+        </NavLink> */}
 
       </nav>
 

@@ -16,6 +16,8 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function VendorInventory() {
   const vendorId = localStorage.getItem("vendor_id");
 
@@ -48,7 +50,7 @@ function VendorInventory() {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/vendor/products/${vendorId}`
+        `${API_URL}/vendor/products/${vendorId}`
       );
 
       setProducts(res.data);
@@ -68,7 +70,7 @@ function VendorInventory() {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/inventory/dashboard/${vendorId}`
+        `${API_URL}/inventory/dashboard/${vendorId}`
       );
 
       setDashboard(res.data);
@@ -363,7 +365,7 @@ function VendorInventory() {
                       <img
                         src={
                           product.image
-                            ? `http://localhost:5000${product.image}`
+                            ? `${API_URL}${product.image}`
                             : "https://placehold.co/60x60"
                         }
                         alt={product.product_name}

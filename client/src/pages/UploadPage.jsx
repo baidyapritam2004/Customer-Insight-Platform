@@ -6,7 +6,7 @@ import { FaCloudUploadAlt, FaFileCsv, FaCheckCircle } from "react-icons/fa";
 import Sidebar from "../components/dashboard/Sidebar";
 import Navbar from "../components/dashboard/Navbar";
 import "../styles/upload.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function UploadPage() {
   const navigate = useNavigate();
 
@@ -60,7 +60,7 @@ function UploadPage() {
       setUploading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:5000/upload",
+        `${API_URL}/upload`,
         formData,
       );
 

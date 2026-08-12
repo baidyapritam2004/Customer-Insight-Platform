@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 
 import "../../styles/productModal.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function ProductModal({ title, product, onClose, onSave }) {
   const [form, setForm] = useState({
     product_name: "",
@@ -177,7 +177,7 @@ const [preview, setPreview] = useState("");
 
   {product?.image && !(form.image instanceof File) && (
     <img
-      src={`http://localhost:5000${product.image}`}
+      src={`${API_URL}${product.image}`}
       alt="Product"
       className="preview-image"
     />
