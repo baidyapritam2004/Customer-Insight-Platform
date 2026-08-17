@@ -86,7 +86,7 @@ function Sidebar() {
           {!collapsed && <span>Upload CSV</span>}
         </NavLink>
 
-        <NavLink to="/admin/analytics"></NavLink>
+       
 
         <NavLink
           to="/admin/vendors"
