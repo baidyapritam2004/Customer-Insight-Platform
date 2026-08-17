@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
-import axios from "axios";
+import api from "../api/api";
 
 import Sidebar from "../components/dashboard/Sidebar";
 import Navbar from "../components/dashboard/Navbar";
@@ -23,8 +22,8 @@ function Vendors() {
   const [performance, setPerformance] = useState([]);
 
   useEffect(() => {
-  axios
-    .get(`${API_URL}/vendor/performance`)
+  api
+  .get("/vendor/performance")
     .then((res) => {
       console.log("Vendor Performance:", res.data);
       setPerformance(res.data);
@@ -37,9 +36,8 @@ function Vendors() {
 }, []);
   const loadVendors = async () => {
   try {
-    console.log("API URL:", API_URL);
 
-    const res = await axios.get(`${API_URL}/vendor/all`);
+    const res = await api.get("/vendor/all");
 
     console.log("Vendor API Response:", res.data);
 
