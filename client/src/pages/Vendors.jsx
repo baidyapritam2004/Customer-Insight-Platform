@@ -23,19 +23,33 @@ function Vendors() {
   const [performance, setPerformance] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`${API_URL}/vendor/performance`)
-      .then((res) => setPerformance(res.data));
-  }, []);
+  axios
+    .get(`${API_URL}/vendor/performance`)
+    .then((res) => {
+      console.log("Vendor Performance:", res.data);
+      setPerformance(res.data);
+    })
+    .catch((err) => {
+      console.error("Vendor Performance Error:", err);
+      console.error("Status:", err.response?.status);
+      console.error("Response:", err.response?.data);
+    });
+}, []);
   const loadVendors = async () => {
-    try {
-      const res = await axios.get(`${API_URL}/vendor/all`);
+  try {
+    console.log("API URL:", API_URL);
 
-      setVendors(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+    const res = await axios.get(`${API_URL}/vendor/all`);
+
+    console.log("Vendor API Response:", res.data);
+
+    setVendors(res.data);
+  } catch (err) {
+    console.error("Vendor API Error:", err);
+    console.error("Status:", err.response?.status);
+    console.error("Response:", err.response?.data);
+  }
+};
 
   const statuses = useMemo(() => {
     return ["All", ...new Set(vendors.map((v) => v.status))];
@@ -43,8 +57,12 @@ function Vendors() {
 
   const filteredVendors = vendors.filter((vendor) => {
     const matchSearch =
-      vendor.business_name.toLowerCase().includes(search.toLowerCase()) ||
-      vendor.owner_name.toLowerCase().includes(search.toLowerCase());
+  (vendor.business_name || "")
+    .toLowerCase()
+    .includes(search.toLowerCase()) ||
+  (vendor.owner_name || "")
+    .toLowerCase()
+    .includes(search.toLowerCase());
 
     const matchStatus =
       statusFilter === "All" || vendor.status === statusFilter;
@@ -224,7 +242,7 @@ function Vendors() {
 
                     <td>{v.business_name}</td>
 
-                    <td>₹{v.revenue.toLocaleString()}</td>
+                    <td>₹{Number(v.revenue || 0).toLocaleString("en-IN")}</td>
 
                     <td>{v.orders}</td>
 
@@ -262,14 +280,14 @@ function Vendors() {
           <h2>
             ₹
             {performance
-              .reduce((a, b) => a + b.revenue, 0)
-              .toLocaleString("en-IN")}
+  .reduce((a, b) => a + Number(b.revenue || 0), 0)
+  .toLocaleString("en-IN")}
           </h2>
         </div>
 
         <div className="vendor-card">
           <h4>Total Orders</h4>
-          <h2>{performance.reduce((a, b) => a + b.orders, 0)}</h2>
+          <h2>{performance.reduce((a, b) => a + (b.orders || 0), 0)}</h2>
         </div>
 
         <div className="vendor-card">
