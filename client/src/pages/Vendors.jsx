@@ -1,10 +1,10 @@
+import { useEffect, useMemo, useState } from "react";
 import api from "../api/api";
 
 import Sidebar from "../components/dashboard/Sidebar";
 import Navbar from "../components/dashboard/Navbar";
 
 import "../styles/vendors.css";
-const API_URL = import.meta.env.VITE_API_URL;
 function Vendors() {
   const [vendors, setVendors] = useState([]);
 
