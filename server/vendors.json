@@ -49,7 +49,14 @@
     },
     {
         "vendor_id": "8625498f",
-        "name": "Vendor",
-        "email": "vendor1@gmail.com"
+        "business_name": "AC Electronics",
+        "owner_name": "Vendor",
+        "email": "vendor1@gmail.com",
+        "phone": "9876543211",
+        "gst_number": "19ABCDE1234F1Z5",
+        "address": "Kolkata",
+        "commission": 4,
+        "status": "Suspended",
+        "verified": false
     }
 ]
