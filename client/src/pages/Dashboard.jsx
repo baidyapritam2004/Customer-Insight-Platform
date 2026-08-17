@@ -55,8 +55,12 @@ function Dashboard() {
     setDashboard(res.data);
 
 })
-      .catch((err) => console.error(err));
-  }, [selectedCategory]);
+      .catch((err) => {
+  console.error("Dashboard API Error:", err);
+  console.error("Response:", err.response);
+  console.error("Status:", err.response?.status);
+  console.error("Data:", err.response?.data);
+});
 
   if (!dashboard) {
     return <h2>Loading Dashboard...</h2>;

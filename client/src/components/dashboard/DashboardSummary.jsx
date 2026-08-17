@@ -22,7 +22,7 @@ function DashboardSummary({ data }) {
 
                 <div className="summary-item">
 
-                    <div className="summary-icon blue">
+                    <div className="summary-icon orange">
                         <FaBoxOpen />
                     </div>
 

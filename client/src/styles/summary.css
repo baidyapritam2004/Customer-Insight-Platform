@@ -46,9 +46,9 @@
 
     align-items:center;
 
-    gap:18px;
+    gap:10px;
 
-    padding:22px;
+    padding:10px;
 
     border-radius:16px;
 
@@ -94,9 +94,9 @@
 
 /* COLORS */
 
-.blue{
+.orange{
 
-    background:#2563eb;
+    background:#f08205;
 
 }
 
